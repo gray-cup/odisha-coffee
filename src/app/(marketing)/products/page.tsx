@@ -4,9 +4,9 @@ import { processingColors, processingLabels } from "@/data/farms";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Coffee Products",
+  title: "Odisha Coffee Products — Green Beans, Export & Specialty Lots",
   description:
-    "Single-origin Odisha coffee lots — washed, natural, and honey processed Arabica and Robusta from Gray Cup partner farms in Koraput. Export-grade green beans and roasted lots available.",
+    "Odisha coffee wholesale and export — washed, natural, and honey processed Arabica & Robusta from verified Koraput farms. Export-grade green beans, specialty lots, and bulk supply available.",
 };
 
 export default function ProductsPage() {
