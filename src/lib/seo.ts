@@ -1,5 +1,5 @@
 export const SITE_NAME = "Gray Cup";
-export const SITE_URL = process.env.SITE_URL || "https://graycup.org";
+export const SITE_URL = process.env.SITE_URL || "https://odishacoffee.com";
 
 export function generateTitle(title: string) {
   const full = `${title} | ${SITE_NAME}`;
