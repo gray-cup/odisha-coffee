@@ -176,14 +176,14 @@ export const products: Product[] = [
     id: "odisha-export-grade-green-robusta",
     name: "Odisha Export Grade — Green Robusta",
     farmId: "koraput-a1-coffee",
-    farmName: "Multiple OCGA Estates",
+    farmName: "Multiple Gray Cup Partner Farms",
     region: "Koraput District",
     processing: "washed",
     variety: "Robusta",
     roastLevel: "medium-dark",
     flavorNotes: ["Neutral", "Clean", "Full Body", "Consistent"],
     description:
-      "A pooled export-grade green bean offering sourced from multiple OCGA member estates in Koraput. Lot-tested, screen-sorted, and moisture-certified (10–12%). Supplied as raw green beans, ideal for import roasters, commodity buyers, and specialty coffee businesses seeking consistent Indian Robusta at scale.",
+      "A pooled export-grade green bean offering sourced from multiple Gray Cup partner estates in Koraput. Lot-tested, screen-sorted, and moisture-certified (10–12%). Supplied as raw green beans, ideal for import roasters, commodity buyers, and specialty coffee businesses seeking consistent Indian Robusta at scale.",
     brewingNotes:
       "For roasters: recommended development time 20–22% in medium roast profile. Excellent for espresso blends, instant coffee production, and value-specialty blending.",
     availability: "in-stock",
@@ -195,14 +195,14 @@ export const products: Product[] = [
     id: "odisha-export-grade-green-arabica",
     name: "Odisha Export Grade — Green Arabica",
     farmId: "koraput-a1-coffee",
-    farmName: "Multiple OCGA Estates",
+    farmName: "Multiple Gray Cup Partner Farms",
     region: "Koraput District",
     processing: "washed",
     variety: "Arabica S795",
     roastLevel: "light",
     flavorNotes: ["Clean", "Mild Acidity", "Chocolate", "Consistent"],
     description:
-      "Traceable export-grade washed Arabica S795 sourced from verified OCGA member farms across Koraput. Phytosanitary certified, ICO registered, and available with full lot documentation. Supplied as screened green beans (Screen 15+), ideal for specialty importers and roasters sourcing Indian-origin Arabica.",
+      "Traceable export-grade washed Arabica S795 sourced from verified Gray Cup partner farms across Koraput. Phytosanitary certified, ICO registered, and available with full lot documentation. Supplied as screened green beans (Screen 15+), ideal for specialty importers and roasters sourcing Indian-origin Arabica.",
     brewingNotes:
       "For roasters: well-suited to medium and medium-light roast profiles. The S795 variety develops excellent chocolate and mild-fruit character when roasted carefully to first crack +30 seconds.",
     availability: "in-stock",

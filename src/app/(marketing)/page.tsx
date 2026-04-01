@@ -101,7 +101,7 @@ const processingMethods = [
     title: "Honey",
     subtitle: "Sweetness & Balance",
     description:
-      "Pulp is removed but varying levels of mucilage are retained on the parchment during drying. This hybrid method bridges washed clarity and natural sweetness, producing honeyed, caramel-rich cups. Several OCGA estates have pioneered honey processing in Odisha.",
+      "Pulp is removed but varying levels of mucilage are retained on the parchment during drying. This hybrid method bridges washed clarity and natural sweetness, producing honeyed, caramel-rich cups. Several Gray Cup partner estates have pioneered honey processing in Odisha.",
     farms: farms.filter((f) => f.processing.includes("honey")).length,
     bgColor: "bg-[#E3A008]",
     textColor: "text-black",
@@ -120,7 +120,7 @@ export default function HomePage() {
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-8 bg-odisha-offwhite/50" />
               <span className="text-xs font-semibold uppercase tracking-widest text-odisha-offwhite/70">
-                Odisha Coffee Growers Association · OCGA
+                Gray Cup Enterprises — Odisha Coffee
               </span>
             </div>
 
@@ -156,7 +156,7 @@ export default function HomePage() {
             {/* Stats */}
             <div className="mt-14 flex flex-wrap gap-8 border-t border-odisha-offwhite/20 pt-8">
               {[
-                { value: "24", label: "Member Farms" },
+                { value: "24", label: "Partner Farms" },
                 { value: "800–1500m", label: "Elevation Range" },
                 { value: "3", label: "Processing Methods" },
                 { value: "Koraput", label: "Primary Region" },
@@ -236,7 +236,7 @@ export default function HomePage() {
                 The Growers
               </span>
               <h2 className="mt-2 font-serif text-3xl md:text-4xl font-bold text-odisha-black leading-tight">
-                Featured member farms
+                Featured partner farms
               </h2>
             </div>
             <Link
@@ -271,7 +271,7 @@ export default function HomePage() {
               The art of processing
             </h2>
             <p className="mt-3 text-sm text-odisha-offwhite/50 leading-relaxed">
-              How a coffee is processed after harvest shapes its flavour as much as where it was grown. OCGA estates practise all three primary methods, giving buyers precise choice over the cup character they source.
+              How a coffee is processed after harvest shapes its flavour as much as where it was grown. Our partner farms practise all three primary methods, giving buyers precise choice over the cup character they source.
             </p>
           </div>
 
@@ -316,7 +316,7 @@ export default function HomePage() {
                 Odisha coffee wholesale &amp; export
               </h2>
               <p className="mt-4 text-sm text-white/70 leading-relaxed">
-                OCGA coordinates export-ready green bean supply from verified member estates across Koraput. All export lots are phytosanitary certified, APEDA registered, and available with full traceability documentation from farm to container.
+               Gray Cup coordinates export-ready green bean supply from verified member estates across Koraput. All export lots are phytosanitary certified, APEDA registered, and available with full traceability documentation from farm to container.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
@@ -342,7 +342,7 @@ export default function HomePage() {
                 },
                 {
                   title: "APEDA Registered",
-                  desc: "OCGA exports are registered with APEDA under the Agricultural & Processed Food Products Export Development Authority.",
+                  desc: "Gray Cup exports are registered with APEDA under the Agricultural & Processed Food Products Export Development Authority.",
                 },
                 {
                   title: "Full Lot Traceability",
@@ -369,10 +369,10 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest text-odisha-black/50">
-                OCGA Members
+                Our Partner Farms
               </span>
               <h2 className="mt-2 font-serif text-3xl font-bold text-odisha-black leading-tight">
-                All {farms.length} member growers
+                All {farms.length} partner farms
               </h2>
             </div>
             <Link
@@ -429,7 +429,7 @@ export default function HomePage() {
             Ready to source Odisha coffee?
           </h2>
           <p className="text-odisha-offwhite/70 text-sm max-w-xl mx-auto mb-8 leading-relaxed">
-            Whether you're a specialty roaster, a wholesale buyer, or an importer looking for traceable Indian single-origin coffee, OCGA can connect you with the right estate and lot.
+            Whether you're a specialty roaster, a wholesale buyer, or an importer looking for traceable Indian single-origin coffee, Gray Cup can connect you with the right estate and lot.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link

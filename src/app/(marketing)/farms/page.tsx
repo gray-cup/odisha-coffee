@@ -4,9 +4,9 @@ import type { ProcessingMethod } from "@/data/farms";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "All Member Farms",
+  title: "Partner Farms",
   description:
-    "Browse all 24 OCGA member coffee farms across Koraput, Odisha. Single-origin lots, traceable processing, and export-ready green beans from India's Eastern Ghats.",
+    "Browse all 24 Gray Cup partner farms across Koraput, Odisha. Single-origin lots, traceable processing, and export-ready green beans from India's Eastern Ghats.",
 };
 
 function ProcessingTag({ method }: { method: ProcessingMethod }) {
@@ -42,10 +42,10 @@ export default function FarmsPage() {
           </div>
 
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-            Member Farms
+            Partner Farms
           </h1>
           <p className="text-white/60 text-sm max-w-2xl leading-relaxed mb-8">
-            The Odisha Coffee Growers Association represents {farms.length} verified coffee estates across Koraput and neighbouring districts of Odisha's Eastern Ghats. Each farm profile documents cultivation practices, processing methods, flavor character, and traceability data.
+            Gray Cup Enterprises sources from {farms.length} verified coffee estates across Koraput and neighbouring districts of Odisha's Eastern Ghats. Each farm profile documents cultivation practices, processing methods, flavor character, and traceability data.
           </p>
 
           {/* Stats row */}
@@ -154,7 +154,7 @@ export default function FarmsPage() {
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <h3 className="font-serif font-bold text-white text-lg">Looking to source from a specific farm?</h3>
-            <p className="text-white/60 text-sm mt-1">Contact OCGA with your requirements — we'll connect you directly.</p>
+            <p className="text-white/60 text-sm mt-1">Contact Gray Cup with your requirements — we'll connect you directly.</p>
           </div>
           <Link
             href="/contact"

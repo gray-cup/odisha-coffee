@@ -240,14 +240,14 @@ export default async function FarmDetailPage({
                 </h3>
                 <div className="space-y-3 text-xs">
                   {[
-                    { label: "Association", value: "OCGA Member" },
+                    { label: "Sourced by", value: "Gray Cup Enterprises" },
                     { label: "Country of Origin", value: "India" },
                     { label: "State", value: "Odisha" },
                     { label: "District", value: farm.district },
                     { label: "Region", value: farm.region },
                     { label: "Elevation", value: farm.elevation },
                     { label: "Harvest Season", value: farm.harvestSeason },
-                    { label: "Export Ready", value: farm.exportReady ? "Yes" : "Contact OCGA" },
+                    { label: "Export Ready", value: farm.exportReady ? "Yes" : "Contact Gray Cup" },
                   ].map(({ label, value }) => (
                     <div key={label} className="flex justify-between gap-2 border-b border-white/10 pb-2">
                       <span className="text-white/50 uppercase tracking-widest text-[10px]">{label}</span>
@@ -263,7 +263,7 @@ export default async function FarmDetailPage({
                   Source from this farm
                 </h3>
                 <p className="text-white/70 text-xs mb-4 leading-relaxed">
-                  Contact OCGA to request samples, lot documentation, or export pricing for {farm.name}.
+                  Contact Gray Cup to request samples, lot documentation, or export pricing for {farm.name}.
                 </p>
                 <Link
                   href={`/contact?farm=${farm.id}`}

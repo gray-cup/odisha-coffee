@@ -173,9 +173,9 @@ export const farms: Farm[] = [
     harvestSeason: "November – February",
     established: 2007,
     description:
-      "Ekayani Plantation is a progressive estate in Lamtaput, experimenting with pulped-natural processing alongside conventional washed lots. The estate has been active in farmer collective programmes and contributes to OCGA's training initiatives for new growers in the region.",
+      "Ekayani Plantation is a progressive estate in Lamtaput, experimenting with pulped-natural processing alongside conventional washed lots. The estate has been active in farmer collective programmes and contributes to Gray Cup's partner training initiatives for new growers in the region.",
     story:
-      "Ekayani — meaning 'the singular one' in Odia — reflects the farm's identity as a distinct voice in Odisha coffee. The estate has positioned itself as a training ground for younger farmers, hosting demonstration processing days and sharing fermentation data across the OCGA network.",
+      "Ekayani — meaning 'the singular one' in Odia — reflects the farm's identity as a distinct voice in Odisha coffee. The estate has positioned itself as a training ground for younger farmers, hosting demonstration processing days and sharing fermentation data across the Gray Cup partner network.",
     certifications: ["FSSAI", "APEDA"],
     exportReady: true,
     featured: false,
@@ -195,7 +195,7 @@ export const farms: Farm[] = [
     description:
       "Jayadhar Garden is a smaller, artisanal estate specialising exclusively in natural-processed Robusta. The farm's low-intervention approach — long cherry drying on raised beds, no additives — produces exceptionally fruit-forward cups that challenge common perceptions of Robusta quality.",
     story:
-      "Jayadhar Nayak inherited this plot from his grandfather and converted it to coffee after seeing neighbours' success. His deep attention to drying consistency — turning cherries hourly during peak sun, covering at night — has become a model for natural processing within the OCGA community.",
+      "Jayadhar Nayak inherited this plot from his grandfather and converted it to coffee after seeing neighbours' success. His deep attention to drying consistency — turning cherries hourly during peak sun, covering at night — has become a model for natural processing within the Odisha coffee community.",
     certifications: ["FSSAI"],
     exportReady: false,
     featured: false,
@@ -215,7 +215,7 @@ export const farms: Farm[] = [
     description:
       "Kakinada Plantation produces balanced, approachable coffees from the central Koraput belt. Both washed and natural lots are produced on-site, giving the estate flexibility to respond to buyer requirements for different cup profiles.",
     story:
-      "The Kakinada family have been part of OCGA since its early days, contributing to the association's collective bargaining infrastructure and export pooling arrangements. Their consistent quality output has made them a reliable supplier in the domestic specialty market.",
+      "The Kakinada family have been a sourcing partner of Gray Cup since the early days, contributing to export pooling arrangements. Their consistent quality output has made them a reliable supplier in the domestic specialty market.",
     certifications: ["FSSAI", "APEDA"],
     exportReady: true,
     featured: false,
@@ -275,7 +275,7 @@ export const farms: Farm[] = [
     description:
       "Laxmi Plantation is a well-respected Robusta estate in the Kotpad region, producing rich, full-bodied coffees that are well suited to espresso blends and commercial roasting. The estate has built a loyal customer base among domestic roasters who value the consistency and character of Koraput Robusta.",
     story:
-      "Named after the goddess of prosperity, Laxmi Plantation has been a steady contributor to the OCGA network. The family has been instrumental in organising group processing sessions among smaller neighbouring farms, helping raise quality standards across their valley.",
+      "Named after the goddess of prosperity, Laxmi Plantation has been a steady contributor to the Gray Cup sourcing network. The family has been instrumental in organising group processing sessions among smaller neighbouring farms, helping raise quality standards across their valley.",
     certifications: ["FSSAI"],
     exportReady: false,
     featured: false,
@@ -313,9 +313,9 @@ export const farms: Farm[] = [
     harvestSeason: "November – January",
     established: 2003,
     description:
-      "Maa Sarala Plantation operates in the adjacent Nabarangpur district, extending Odisha's coffee belt beyond Koraput. The estate brings a slightly different terroir to the OCGA network — lower elevation with distinct seasonal rains — producing coffees with a heavier body and pronounced fruit character.",
+      "Maa Sarala Plantation operates in the adjacent Nabarangpur district, extending Odisha's coffee belt beyond Koraput. The estate brings a slightly different terroir to the Gray Cup sourcing network — lower elevation with distinct seasonal rains — producing coffees with a heavier body and pronounced fruit character.",
     story:
-      "This plantation was one of the first to bring coffee cultivation to Nabarangpur, inspired by success stories from neighbouring Koraput. The family has worked closely with OCGA to adapt best practices to the slightly different conditions of their district.",
+      "This plantation was one of the first to bring coffee cultivation to Nabarangpur, inspired by success stories from neighbouring Koraput. The family has worked closely with Gray Cup to adapt best practices to the slightly different conditions of their district.",
     certifications: ["FSSAI"],
     exportReady: false,
     featured: false,
@@ -393,9 +393,9 @@ export const farms: Farm[] = [
     harvestSeason: "November – January",
     established: 2014,
     description:
-      "Odisi Advance Telematic System is a technology-forward enterprise within OCGA that integrates sensor-based monitoring into the growing and processing workflow. The estate uses IoT humidity and temperature sensors in the drying station and fermentation tanks to achieve unprecedented consistency in its washed lots.",
+      "Odisi Advance Telematic System is a technology-forward enterprise that integrates sensor-based monitoring into the growing and processing workflow. The estate uses IoT humidity and temperature sensors in the drying station and fermentation tanks to achieve unprecedented consistency in its washed lots.",
     story:
-      "This estate started as a pilot programme to test whether precision agriculture technologies could be applied to small-holder coffee farming in Odisha. The results — lower defect rates, more consistent moisture content — have encouraged other OCGA members to adopt similar monitoring tools.",
+      "This estate started as a pilot programme to test whether precision agriculture technologies could be applied to small-holder coffee farming in Odisha. The results — lower defect rates, more consistent moisture content — have encouraged other partner farms to adopt similar monitoring tools.",
     certifications: ["FSSAI", "APEDA"],
     exportReady: true,
     featured: false,
@@ -413,7 +413,7 @@ export const farms: Farm[] = [
     harvestSeason: "November – February",
     established: 1999,
     description:
-      "Panigrahi Agro Foundation operates as both an estate and a training centre for coffee quality in Odisha. The foundation has partnered with OCGA to run cupping labs and grower workshops, elevating the technical standards of the region's coffee sector.",
+      "Panigrahi Agro Foundation operates as both an estate and a training centre for coffee quality in Odisha. The foundation has partnered with Gray Cup to run cupping labs and grower workshops, elevating the technical standards of the region's coffee sector.",
     story:
       "Established as a family estate, the Panigrahi Foundation has evolved into a knowledge hub for Odisha coffee. Their cupping lab — one of the few operational in the region — has trained over 50 farmers in sensory evaluation, helping growers connect processing decisions to final cup quality.",
     certifications: ["FSSAI", "APEDA", "ISO 22000"],
@@ -435,7 +435,7 @@ export const farms: Farm[] = [
     description:
       "SM Plantation is a compact, well-run estate in the Boipariguda belt known for its fruit-forward natural lots. The estate focuses on selective hand-picking at optimum ripeness, a factor that significantly elevates the quality of naturally processed coffees by reducing underripe and overripe cherry in the drying batch.",
     story:
-      "The SM Plantation team has been a quiet but consistent presence in Odisha coffee circles. Their methodical approach to cherry selection — sorting by float before any processing begins — has been highlighted in OCGA training materials as a model practice.",
+      "The SM Plantation team has been a quiet but consistent presence in Odisha coffee circles. Their methodical approach to cherry selection — sorting by float before any processing begins — has been highlighted in Gray Cup sourcing documentation as a model practice.",
     certifications: ["FSSAI"],
     exportReady: false,
     featured: false,
@@ -455,7 +455,7 @@ export const farms: Farm[] = [
     description:
       "Sri Sai Plantation produces polished, approachable coffees from the Koraput highlands. The estate's honey-processed lots in particular have built a following among roasters seeking sweetness-forward coffees without the intensity of full natural processing.",
     story:
-      "Named after the beloved saint Sai Baba, this plantation reflects the family's devotion and care in everything they do. The estate is noted within OCGA for its worker welfare programme, which includes housing, healthcare, and school fee support for the children of permanent farm staff.",
+      "Named after the beloved saint Sai Baba, this plantation reflects the family's devotion and care in everything they do. The estate is noted among Odisha coffee producers for its worker welfare programme, which includes housing, healthcare, and school fee support for the children of permanent farm staff.",
     certifications: ["FSSAI", "APEDA"],
     exportReady: true,
     featured: false,
@@ -495,7 +495,7 @@ export const farms: Farm[] = [
     description:
       "Urbara Plantation — 'Urbara' meaning fertile land in Sanskrit — lives up to its name with a diverse portfolio of varieties and processing methods. The estate has invested in a full wet mill and covered drying infrastructure, enabling year-round lot production and consistent quality across seasons.",
     story:
-      "Co-founded by a husband-wife team from agricultural backgrounds, Urbara Plantation has brought a scientific and entrepreneurial energy to Odisha coffee. Their approach to varietal separation and lot documentation has set a benchmark for traceability within the OCGA member network.",
+      "Co-founded by a husband-wife team from agricultural backgrounds, Urbara Plantation has brought a scientific and entrepreneurial energy to Odisha coffee. Their approach to varietal separation and lot documentation has set a benchmark for traceability within the Odisha coffee farming community.",
     certifications: ["FSSAI", "APEDA", "Organic India"],
     exportReady: true,
     featured: false,

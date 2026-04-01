@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Coffee Products",
   description:
-    "Single-origin Odisha coffee lots — washed, natural, and honey processed Arabica and Robusta from OCGA member farms in Koraput. Export-grade green beans and roasted lots available.",
+    "Single-origin Odisha coffee lots — washed, natural, and honey processed Arabica and Robusta from Gray Cup partner farms in Koraput. Export-grade green beans and roasted lots available.",
 };
 
 export default function ProductsPage() {
@@ -30,7 +30,7 @@ export default function ProductsPage() {
             Coffee Lots
           </h1>
           <p className="text-white/70 text-sm max-w-2xl leading-relaxed">
-            Single-origin coffee from verified OCGA member estates in Koraput, Odisha. Available as specialty roasted lots, export-grade green beans, and seasonal micro-lots. All lots are traceable to the farm of origin.
+            Single-origin coffee from verified Gray Cup partner estates in Koraput, Odisha. Available as specialty roasted lots, export-grade green beans, and seasonal micro-lots. All lots are traceable to the farm of origin.
           </p>
 
           {/* Filter badges */}
@@ -220,7 +220,7 @@ export default function ProductsPage() {
               Looking for bulk green beans or custom lots?
             </h2>
             <p className="text-white/50 text-sm leading-relaxed max-w-xl">
-              OCGA can source any quantity from individual estates or pooled member supplies. We work with specialty roasters, importers, and commodity buyers with full documentation.
+              Gray Cup can source any quantity from individual estates or pooled member supplies. We work with specialty roasters, importers, and commodity buyers with full documentation.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">

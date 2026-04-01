@@ -28,48 +28,39 @@ const fontPublicSans = Public_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Odisha Coffee | OCGA — Koraput Coffee Growers & Exporters",
-    template: "%s | Odisha Coffee — OCGA",
+    default: "Gray Cup — Odisha Coffee Export & Wholesale",
+    template: "%s | Gray Cup",
   },
   description:
-    "Odisha Coffee Growers Association (OCGA) — traceable, single-origin coffee from the Eastern Ghats of Koraput, Odisha. Wholesale, export, and specialty lots from 24 verified member farms.",
+    "Gray Cup Enterprises sources and exports single-origin coffee from the Eastern Ghats of Koraput, Odisha. Wholesale green beans, traceable lots, and export supply from verified Odisha coffee farms.",
   keywords: [
-    "Odisha coffee",
     "Odisha coffee wholesale",
     "Odisha coffee export",
     "Koraput coffee",
-    "Indian specialty coffee",
-    "OCGA coffee",
-    "coffee growers Odisha",
-    "Eastern Ghats coffee",
+    "Indian specialty coffee export",
+    "Gray Cup coffee",
     "Odisha coffee farms",
     "buy Odisha coffee",
     "Indian single origin coffee",
-    "Koraput Arabica",
-    "Koraput Robusta",
+    "Koraput Arabica export",
+    "Koraput Robusta wholesale",
+    "coffee sourcing India",
   ],
   icons: {
     icon: [{ url: "/favicon.ico" }],
   },
   openGraph: {
-    title: "Odisha Coffee | OCGA — Koraput Coffee Growers & Exporters",
+    title: "Gray Cup — Odisha Coffee Export & Wholesale",
     description:
-      "Traceable, single-origin coffee from the Eastern Ghats of Koraput, Odisha. 24 member farms. Wholesale and export available.",
-    images: [
-      {
-        url: "/og.png",
-        width: 1200,
-        height: 630,
-        alt: "Odisha Coffee — OCGA",
-      },
-    ],
+      "Sourcing and exporting single-origin coffee from the Eastern Ghats of Koraput, Odisha. Traceable lots, wholesale green beans, and direct farm connections.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Gray Cup — Odisha Coffee" }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Odisha Coffee | OCGA — Koraput Coffee Growers & Exporters",
+    title: "Gray Cup — Odisha Coffee Export & Wholesale",
     description:
-      "Traceable, single-origin coffee from the Eastern Ghats of Koraput, Odisha.",
+      "Sourcing and exporting single-origin coffee from the Eastern Ghats of Koraput, Odisha.",
     images: ["/og.png"],
   },
 };
