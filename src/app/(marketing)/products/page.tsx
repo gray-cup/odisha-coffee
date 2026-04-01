@@ -1,241 +1,244 @@
-"use client";
+import Link from "next/link";
+import { products, roastLabels, availabilityColors, availabilityLabels } from "@/data/products";
+import { processingColors, processingLabels } from "@/data/farms";
+import type { Metadata } from "next";
 
-import React, { useState } from "react";
-import Image from "next/image";
-import { Card } from "@/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-
-type Product = {
-  name: string;
-  image: string;
-  description: string;
-  details: string[];
-  locations: string[];
+export const metadata: Metadata = {
+  title: "Coffee Products",
+  description:
+    "Single-origin Odisha coffee lots — washed, natural, and honey processed Arabica and Robusta from OCGA member farms in Koraput. Export-grade green beans and roasted lots available.",
 };
 
-const products: Product[] = [
-  {
-    name: "CTC Tea",
-    image: "/products/ctc-tea.png",
-    description:
-      "Premium CTC (Crush, Tear, Curl) black tea with a robust flavor profile and rich, malty taste.",
-    details: [
-      "Strong and full-bodied flavor",
-      "Perfect for milk tea",
-      "Quick brewing time",
-      "Rich in antioxidants",
-    ],
-    locations: ["Assam", "Darjeeling", "Nilgiri", "Dooars"],
-  },
-  {
-    name: "Loose Leaf Tea",
-    image: "/products/loose-leaf-tea.png",
-    description:
-      "Artisanal loose leaf tea with whole leaves that unfurl beautifully, delivering a delicate and aromatic experience.",
-    details: [
-      "Whole leaf quality",
-      "Complex flavor notes",
-      "Multiple infusions possible",
-      "Natural and unprocessed",
-    ],
-    locations: ["Darjeeling", "Assam", "Kangra", "Munnar"],
-  },
-  {
-    name: "Green Coffee Beans",
-    image: "/products/green-coffee-beans.png",
-    description:
-      "Unroasted green coffee beans with potential health benefits and perfect for home roasting enthusiasts.",
-    details: [
-      "High chlorogenic acid content",
-      "Customizable roast levels",
-      "Fresh and natural",
-      "Rich in antioxidants",
-    ],
-    locations: ["Coorg", "Chikmagalur", "Wayanad", "Araku Valley"],
-  },
-  {
-    name: "Roasted Coffee Beans",
-    image: "/products/roasted-coffee-beans.png",
-    description:
-      "Expertly roasted coffee beans with a perfect balance of aroma, flavor, and body for the ultimate coffee experience.",
-    details: [
-      "Medium to dark roast",
-      "Rich, bold flavor",
-      "Aromatic and fresh",
-      "Perfect for espresso or filter",
-    ],
-    locations: ["Chikmagalur", "Coorg", "Wayanad", "Bababudangiri"],
-  },
-  {
-    name: "Ground Coffee",
-    image: "/products/ground-coffee.png",
-    description:
-      "Freshly ground coffee powder ready to brew, delivering convenience without compromising on quality and taste.",
-    details: [
-      "Ready to brew",
-      "Consistent grind size",
-      "Rich aroma",
-      "Versatile brewing methods",
-    ],
-    locations: ["Wayanad", "Chikmagalur", "Coorg", "Araku Valley"],
-  },
-  {
-    name: "Matcha Tea",
-    image: "/products/matcha-tea.png",
-    description:
-      "Premium grade matcha powder with vibrant green color, offering sustained energy and numerous health benefits.",
-    details: [
-      "Ceremonial grade quality",
-      "High L-theanine content",
-      "Sustained energy boost",
-      "Rich in catechins",
-    ],
-    locations: ["Uji, Kyoto", "Nishio, Aichi"],
-  },
-];
-
-function ProductCard({
-  product,
-  onClick,
-}: {
-  product: Product;
-  onClick: () => void;
-}) {
-  return (
-    <Card
-      className="overflow-hidden border border-gray-200 rounded-lg bg-white p-0 cursor-pointer transition-colors hover:border-gray-300"
-      onClick={onClick}
-    >
-      <div className="aspect-square relative">
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          draggable={false}
-          className="object-cover"
-        />
-      </div>
-      <div className="-mt-3 pb-4 text-center">
-        <h3 className="text-md font-semibold text-black">{product.name}</h3>
-      </div>
-    </Card>
-  );
-}
-
 export default function ProductsPage() {
-  const [open, setOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const exportLots = products.filter((p) => p.exportAvailable);
+  const specialtyLots = products.filter((p) => !p.exportAvailable || p.availability !== "in-stock");
 
   return (
-    <div className="px-4 lg:px-6">
-      <div className="min-h-screen py-20">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-semibold text-black mb-4">
-              Our Products
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Premium quality tea and coffee selections
-            </p>
+    <div>
+      {/* Header */}
+      <section className="bg-odisha-red pattachitra-pattern-red border-b-2 border-odisha-black">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-14">
+          <div className="flex items-center gap-3 mb-5">
+            <Link href="/" className="text-xs text-white/40 hover:text-white/70 uppercase tracking-widest transition-colors">
+              Home
+            </Link>
+            <span className="text-white/20">/</span>
+            <span className="text-xs text-white/60 uppercase tracking-widest">Products</span>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {products.map((product) => (
-              <ProductCard
-                key={product.name}
-                product={product}
-                onClick={() => {
-                  setSelectedProduct(product);
-                  setOpen(true);
-                }}
-              />
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            Coffee Lots
+          </h1>
+          <p className="text-white/70 text-sm max-w-2xl leading-relaxed">
+            Single-origin coffee from verified OCGA member estates in Koraput, Odisha. Available as specialty roasted lots, export-grade green beans, and seasonal micro-lots. All lots are traceable to the farm of origin.
+          </p>
+
+          {/* Filter badges */}
+          <div className="flex flex-wrap gap-2 mt-6">
+            {["All", "Washed", "Natural", "Honey", "Export Ready"].map((filter) => (
+              <span
+                key={filter}
+                className={`text-[10px] font-semibold uppercase tracking-widest px-3 py-1.5 border-2 cursor-default ${
+                  filter === "All"
+                    ? "bg-white text-odisha-black border-white"
+                    : "bg-transparent text-white/60 border-white/30 hover:border-white hover:text-white transition-colors"
+                }`}
+              >
+                {filter}
+              </span>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      <Dialog
-        open={open}
-        onOpenChange={(isOpen) => {
-          setOpen(isOpen);
-        }}
-      >
-        <DialogContent
-          forceMount
-          className="max-w-4xl max-h-[90vh] overflow-y-auto"
-        >
-          {selectedProduct && (
-            <>
-              <DialogHeader>
-                <DialogTitle className="text-2xl pr-8">
-                  {selectedProduct.name}
-                </DialogTitle>
-              </DialogHeader>
+      {/* Export grade section */}
+      <section className="bg-odisha-offwhite border-b-2 border-odisha-black pattachitra-pattern">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-1 h-6 bg-odisha-green" />
+            <div>
+              <h2 className="font-serif text-2xl font-bold text-odisha-black">Export Grade Lots</h2>
+              <p className="text-xs text-odisha-black/50 mt-0.5">Available for wholesale and international buyers</p>
+            </div>
+          </div>
 
-              <div className="flex flex-col md:flex-row gap-6">
-                {/* Image */}
-                <div className="md:w-2/5">
-                  <div className="aspect-square relative rounded-lg overflow-hidden bg-gray-50">
-                    <Image
-                      src={selectedProduct.image}
-                      alt={selectedProduct.name}
-                      fill
-                      draggable={false}
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+            {exportLots.map((product) => (
+              <div
+                key={product.id}
+                className="border-2 border-odisha-black -ml-[2px] -mt-[2px] bg-white flex flex-col"
+              >
+                {/* Color stripe */}
+                <div className={`h-1 w-full ${processingColors[product.processing].split(" ")[0]}`} />
 
-                {/* Content */}
-                <div className="md:w-3/5 flex flex-col gap-4">
-                  <div className="flex gap-2 text-sm text-muted-foreground">
-                    <span className="font-medium">Locations:</span>
-                    <span>{selectedProduct.locations.join(", ")}</span>
+                <div className="p-5 flex flex-col flex-1">
+                  {/* Title + availability */}
+                  <div className="flex items-start justify-between gap-2 mb-3">
+                    <h3 className="font-serif font-bold text-odisha-black text-base leading-snug flex-1">
+                      {product.name}
+                    </h3>
+                    <span className={`shrink-0 text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 ${availabilityColors[product.availability]}`}>
+                      {availabilityLabels[product.availability]}
+                    </span>
                   </div>
 
-                  <p className="text-base text-gray-700 leading-relaxed">
-                    {selectedProduct.description}
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    <span className={`text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 ${processingColors[product.processing]}`}>
+                      {processingLabels[product.processing]}
+                    </span>
+                    <span className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 bg-odisha-offwhite border border-odisha-black/30 text-odisha-black">
+                      {roastLabels[product.roastLevel]}
+                    </span>
+                  </div>
+
+                  {/* Meta */}
+                  <div className="space-y-1 mb-3">
+                    <div className="flex gap-2 text-xs text-odisha-black/60">
+                      <span className="font-medium text-odisha-black/80">Farm:</span>
+                      <Link href={`/farms/${product.farmId}`} className="hover:text-odisha-red transition-colors">
+                        {product.farmName}
+                      </Link>
+                    </div>
+                    <div className="flex gap-2 text-xs text-odisha-black/60">
+                      <span className="font-medium text-odisha-black/80">Variety:</span>
+                      <span>{product.variety}</span>
+                    </div>
+                    <div className="flex gap-2 text-xs text-odisha-black/60">
+                      <span className="font-medium text-odisha-black/80">Origin:</span>
+                      <span>{product.region}</span>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-xs text-odisha-black/60 leading-relaxed mb-3 flex-1 line-clamp-4">
+                    {product.description}
                   </p>
 
-                  <div>
-                    <h4 className="font-semibold text-sm mb-3 text-black">
-                      Key Features
-                    </h4>
-                    <ul className="space-y-2">
-                      {selectedProduct.details.map((detail, index) => (
-                        <li
-                          key={index}
-                          className="flex items-start gap-2 text-sm text-gray-600"
-                        >
-                          <svg
-                            className="w-5 h-5 shrink-0 text-green-600 mt-0.5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          <span>{detail}</span>
-                        </li>
+                  {/* Flavor notes */}
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {product.flavorNotes.map((note) => (
+                      <span key={note} className="text-[10px] px-2 py-0.5 bg-odisha-offwhite border border-odisha-black/20 text-odisha-black/60">
+                        {note}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Weight options + CTA */}
+                  <div className="border-t-2 border-odisha-black pt-4 mt-auto">
+                    <div className="text-[10px] font-semibold uppercase tracking-widest text-odisha-black/50 mb-2">
+                      Available as:
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                      {product.weightOptions.map((w) => (
+                        <span key={w} className="text-[10px] font-medium px-2 py-0.5 border-2 border-odisha-black text-odisha-black">
+                          {w}
+                        </span>
                       ))}
-                    </ul>
+                    </div>
+                    {product.minOrderExport && (
+                      <p className="text-[10px] text-odisha-green font-semibold mb-2">
+                        Min. export order: {product.minOrderExport}
+                      </p>
+                    )}
+                    <Link
+                      href={`/contact?product=${product.id}`}
+                      className="block text-center text-xs font-semibold uppercase tracking-widest py-2 bg-odisha-black text-white border-2 border-odisha-black hover:bg-odisha-red hover:border-odisha-red transition-colors"
+                    >
+                      Inquire / Request Sample
+                    </Link>
                   </div>
                 </div>
               </div>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Specialty / Seasonal section */}
+      <section className="bg-white border-b-2 border-odisha-black">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-1 h-6 bg-odisha-orange" />
+            <div>
+              <h2 className="font-serif text-2xl font-bold text-odisha-black">Specialty & Seasonal Lots</h2>
+              <p className="text-xs text-odisha-black/50 mt-0.5">Single-farm micro-lots, limited availability</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+            {specialtyLots.map((product) => (
+              <div key={product.id} className="border-2 border-odisha-black -ml-[2px] -mt-[2px] p-6 bg-white">
+                <div className="flex items-start gap-4">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <h3 className="font-serif font-bold text-odisha-black text-lg leading-snug">
+                        {product.name}
+                      </h3>
+                      <span className={`text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 ${availabilityColors[product.availability]}`}>
+                        {availabilityLabels[product.availability]}
+                      </span>
+                    </div>
+
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                      <span className={`text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 ${processingColors[product.processing]}`}>
+                        {processingLabels[product.processing]}
+                      </span>
+                    </div>
+
+                    <div className="text-xs text-odisha-black/60 space-y-1 mb-3">
+                      <p><span className="font-medium text-odisha-black/80">Farm:</span>{" "}
+                        <Link href={`/farms/${product.farmId}`} className="hover:text-odisha-red transition-colors">
+                          {product.farmName}
+                        </Link>
+                      </p>
+                      <p><span className="font-medium text-odisha-black/80">Variety:</span> {product.variety}</p>
+                      <p><span className="font-medium text-odisha-black/80">Roast:</span> {roastLabels[product.roastLevel]}</p>
+                    </div>
+
+                    <p className="text-xs text-odisha-black/60 leading-relaxed mb-3">{product.description}</p>
+
+                    <div className="border-t border-odisha-black/10 pt-3">
+                      <div className="text-[10px] font-semibold uppercase tracking-widest text-odisha-black/40 mb-1.5">
+                        Brewing Notes
+                      </div>
+                      <p className="text-xs text-odisha-black/55 leading-relaxed">{product.brewingNotes}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Wholesale CTA */}
+      <section className="bg-odisha-black border-b-2 border-odisha-black pattachitra-pattern-red">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-2">
+              Looking for bulk green beans or custom lots?
+            </h2>
+            <p className="text-white/50 text-sm leading-relaxed max-w-xl">
+              OCGA can source any quantity from individual estates or pooled member supplies. We work with specialty roasters, importers, and commodity buyers with full documentation.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/contact"
+              className="inline-block px-6 py-3 bg-white text-odisha-black text-sm font-semibold border-2 border-white hover:bg-odisha-yellow hover:border-odisha-yellow transition-colors whitespace-nowrap"
+            >
+              Wholesale Inquiry
+            </Link>
+            <Link
+              href="/farms"
+              className="inline-block px-6 py-3 bg-transparent text-white text-sm font-semibold border-2 border-white/40 hover:border-white transition-colors whitespace-nowrap"
+            >
+              Browse Farms
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,145 +1,130 @@
 import Link from "next/link";
+import { farms } from "@/data/farms";
+
+const quickLinks = [
+  { href: "/farms", label: "All Farms" },
+  { href: "/products", label: "Products" },
+  { href: "/about", label: "About OCGA" },
+  { href: "/contact", label: "Contact & Wholesale" },
+];
+
+const infoLinks = [
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/terms", label: "Terms of Use" },
+  { href: "/shipping", label: "Shipping Policy" },
+  { href: "/sitemap.xml", label: "Sitemap" },
+];
 
 export default function Footer() {
-  const mainLinks = [
-    { href: "/about", label: "About" },
-    { href: "/products", label: "Products" },
-    { href: "/contact", label: "Contact" },
-    { href: "/impressum", label: "Impressum" },
-  ];
-
-  const socialLinks = [
-    { href: "https://x.com/TheGrayCup", label: "Twitter" },
-    { href: "https://github.com/Gray-Cup", label: "GitHub" },
-    { href: "https://discord.gg/gpRxmW63JW", label: "Discord" },
-    { href: "https://instagram.com/thegraycup", label: "Instagram" },
-  ];
-
-  const resourceLinks = [
-    { href: "https://graycup.org", label: "Company Site" },
-    { href: "https://b2b.graycup.in/", label: "B2B Store" },
-    { href: "https://graycup.in/", label: "Consumer Store" },
-    { href: "https://status.graycup.org/", label: "Status" },
-    { href: "/sites", label: "Our Sites" },
-    { href: "/future-of-coffee", label: "Future of Coffee" },
-    { href: "/sitemap.xml", label: "Sitemap" },
-  ];
-
   return (
-    <footer className="border-t border-neutral-200 bg-white">
-      <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8">
-        {/* Top links */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-            {mainLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-            {socialLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+    <footer className="border-t-2 border-odisha-black bg-odisha-black text-odisha-offwhite">
+      {/* Top bar */}
+      <div className="bg-odisha-red border-b-2 border-odisha-black">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <p className="text-odisha-offwhite text-sm font-medium">
+            Sourcing exceptional coffee from the Eastern Ghats of Odisha — available for wholesale &amp; export.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-odisha-offwhite text-odisha-black text-sm font-semibold border-2 border-odisha-offwhite hover:bg-odisha-yellow hover:border-odisha-yellow transition-colors whitespace-nowrap"
+          >
+            Wholesale Inquiry
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
         </div>
+      </div>
 
-        {/* Legal text (Apple-style) */}
-        <div className="mt-6 text-xs leading-relaxed text-muted-foreground space-y-2">
-          <p>
-            Gray Cup Enterprises Private Limited is a company incorporated in
-            India under the Companies Act, 2013. Corporate Identification Number
-            (CIN):{" "}
-            <span className="whitespace-nowrap">U47211DL2025PTC457808</span>.
-            Registered Address: FF122, Rodeo Drive Mall, GT Road, TDI City,
-            Kundli, Sonipat, Haryana, 131030.
-          </p>
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand block */}
+          <div className="md:col-span-1">
+            <div className="mb-4">
+              <div className="text-lg font-serif font-bold text-odisha-offwhite tracking-wide mb-1">
+                ODISHA COFFEE
+              </div>
+              <div className="text-xs uppercase tracking-widest text-odisha-offwhite/50 mb-3">
+                Odisha Coffee Growers Association
+              </div>
+              <p className="text-xs text-odisha-offwhite/60 leading-relaxed">
+                A grower collective representing 24 coffee estates across Koraput and surrounding districts of Odisha, India.
+              </p>
+            </div>
+            <div className="flex items-center gap-1 mt-4">
+              <div className="h-2 w-2 bg-odisha-green rounded-full" />
+              <span className="text-xs text-odisha-offwhite/50">Export Ready</span>
+            </div>
+          </div>
 
-          <p>
-            GST Registration Number:{" "}
-            <span className="whitespace-nowrap">06AAMCG4985H1Z4</span>. Product
-            availability, pricing, and specifications are subject to change
-            without notice.
-          </p>
+          {/* Quick links */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-odisha-offwhite/50 mb-4">
+              Navigate
+            </h3>
+            <ul className="space-y-2">
+              {quickLinks.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="text-sm text-odisha-offwhite/70 hover:text-odisha-yellow transition-colors"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <p>
-            Gray Cup Enterprises Private Limited is engaged in the sourcing,
-            packaging, trading, and export of tea, coffee, and spices. Export of
-            products is subject to applicable laws, customs regulations, and
-            foreign trade policies. International shipments may be subject to
-            duties and taxes imposed by destination authorities.
-          </p>
+          {/* Member farms */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-odisha-offwhite/50 mb-4">
+              Member Farms
+            </h3>
+            <ul className="space-y-1.5 columns-2">
+              {farms.map((f) => (
+                <li key={f.id} className="break-inside-avoid">
+                  <Link
+                    href={`/farms/${f.id}`}
+                    className="text-xs text-odisha-offwhite/60 hover:text-odisha-yellow transition-colors leading-relaxed"
+                  >
+                    {f.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <p>
-            Importer Exporter Code (IEC):{" "}
-            <span className="whitespace-nowrap">AAMCG4985H</span>. Exports are
-            carried out in accordance with the Foreign Trade Policy of India and
-            applicable export regulations.
-          </p>
-
-          <p>
-            Food Safety and Standards Authority of India (FSSAI) License:{" "}
-            <span className="whitespace-nowrap">23326008000195</span>. All food
-            products are handled, packaged, and supplied in compliance with
-            FSSAI regulations and food safety standards.
-          </p>
-
-          <p>
-            Product images and descriptions are for illustrative purposes only.
-            Actual products may vary. Use of this website constitutes acceptance
-            of our{" "}
-            <Link href="/terms" className="underline hover:text-foreground">
-              Terms of Use
-            </Link>
-            ,{" "}
-            <Link href="/privacy" className="underline hover:text-foreground">
-              Privacy Policy
-            </Link>
-            , and{" "}
-            <Link href="/shipping" className="underline hover:text-foreground">
-              Sales & Shipping Policy
-            </Link>
-            .
-          </p>
+          {/* Legal + contact */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-odisha-offwhite/50 mb-4">
+              Legal &amp; Info
+            </h3>
+            <ul className="space-y-2 mb-6">
+              {infoLinks.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="text-sm text-odisha-offwhite/70 hover:text-odisha-yellow transition-colors"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="text-xs text-odisha-offwhite/50 space-y-1">
+              <p>Member: <a href="https://www.ocga.in" target="_blank" rel="noopener" className="hover:text-odisha-yellow transition-colors underline">ocga.in</a></p>
+              <p>Koraput, Odisha — India</p>
+            </div>
+          </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-6 pt-6 border-t border-neutral-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-muted-foreground">
+        <div className="mt-10 pt-6 border-t border-odisha-offwhite/10 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-odisha-offwhite/40">
+          <p>© {new Date().getFullYear()} Odisha Coffee Growers Association (OCGA). All rights reserved.</p>
           <p>
-            © {new Date().getFullYear()} Gray Cup Enterprises Pvt. Ltd. All
-            rights reserved.
+            Koraput Arabica &amp; Robusta — Eastern Ghats, Odisha, India &nbsp;·&nbsp; FSSAI Licensed &nbsp;·&nbsp; APEDA Registered &nbsp;·&nbsp; IEC Certified
           </p>
-
-          <nav className="flex items-center gap-x-6">
-            {resourceLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel={
-                  link.href.startsWith("http")
-                    ? "noopener noreferrer"
-                    : undefined
-                }
-                className="hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
         </div>
       </div>
     </footer>

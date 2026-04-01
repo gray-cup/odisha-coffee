@@ -1,317 +1,452 @@
-"use client";
+import Link from "next/link";
+import { farms, featuredFarms, processingColors, processingLabels } from "@/data/farms";
+import type { ProcessingMethod } from "@/data/farms";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import Script from "next/script";
-import { CoffeeCup } from "@/components/svgs";
-import Image from "next/image";
-import { TechSolutionsDialog } from "@/components/tech-solutions-dialog";
+// ── Reusable tag ────────────────────────────────────────────────────────
+function ProcessingTag({ method }: { method: ProcessingMethod }) {
+  return (
+    <span
+      className={`inline-block text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 border border-current ${processingColors[method]}`}
+    >
+      {processingLabels[method]}
+    </span>
+  );
+}
 
-const whatWeDoItems = [
+// ── Farm card ────────────────────────────────────────────────────────────
+function FarmCard({ farm }: { farm: (typeof farms)[0] }) {
+  return (
+    <Link
+      href={`/farms/${farm.id}`}
+      className="group block pattachitra-card bg-white hover:bg-odisha-offwhite transition-colors"
+    >
+      <div className="p-5">
+        {/* Header */}
+        <div className="flex items-start justify-between gap-2 mb-3">
+          <h3 className="font-serif font-semibold text-odisha-black text-base leading-snug group-hover:text-odisha-red transition-colors">
+            {farm.name}
+          </h3>
+          {farm.exportReady && (
+            <span className="shrink-0 text-[9px] font-bold uppercase tracking-widest border border-odisha-green text-odisha-green px-1.5 py-0.5">
+              Export
+            </span>
+          )}
+        </div>
+
+        {/* Meta */}
+        <div className="space-y-1 mb-4">
+          <div className="flex items-center gap-2 text-xs text-odisha-black/60">
+            <svg className="w-3 h-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>{farm.region}, {farm.district}</span>
+          </div>
+          <div className="flex items-center gap-2 text-xs text-odisha-black/60">
+            <svg className="w-3 h-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+            <span>{farm.elevation}</span>
+          </div>
+        </div>
+
+        {/* Processing tags */}
+        <div className="flex flex-wrap gap-1.5">
+          {farm.processing.map((m) => (
+            <ProcessingTag key={m} method={m} />
+          ))}
+        </div>
+
+        {/* Flavor notes */}
+        <p className="mt-3 text-xs text-odisha-black/50 leading-relaxed line-clamp-2">
+          {farm.flavorNotes.join(" · ")}
+        </p>
+      </div>
+
+      {/* Bottom stripe */}
+      <div className="border-t-2 border-odisha-black px-5 py-2 flex items-center justify-between bg-odisha-black/5">
+        <span className="text-[10px] uppercase tracking-widest text-odisha-black/50">{farm.area}</span>
+        <svg className="w-3.5 h-3.5 text-odisha-black/40 group-hover:text-odisha-red transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </div>
+    </Link>
+  );
+}
+
+// ── Processing method block ─────────────────────────────────────────────
+const processingMethods = [
   {
-    iconBg: "bg-amber-100",
-    iconColor: "text-amber-700",
-    path: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064",
-    title: "Sourcing",
-    description: "Partnering directly with farms and estates to source traceable, high-quality tea and coffee beans.",
+    method: "washed" as ProcessingMethod,
+    title: "Washed",
+    subtitle: "Transparency & Terroir",
+    description:
+      "Cherry pulp is removed before fermentation. The bean is then fermented in water tanks, washed thoroughly, and dried on raised beds. This method produces clean, bright cups where the origin terroir shines clearly — the definitive expression of Koraput's mineral highland soils.",
+    farms: farms.filter((f) => f.processing.includes("washed")).length,
+    bgColor: "bg-[#1E3A8A]",
+    textColor: "text-white",
   },
   {
-    iconBg: "bg-neutral-100",
-    iconColor: "text-neutral-700",
-    path: "M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z",
-    title: "Retail",
-    description: "Bringing exceptional beans directly to consumers and businesses who value origin and craft.",
+    method: "natural" as ProcessingMethod,
+    title: "Natural",
+    subtitle: "Fruit & Complexity",
+    description:
+      "Whole cherries are dried on raised beds for 25–35 days. The fruit remains in contact with the bean throughout, imparting pronounced fruit sweetness, berry notes, and a dense, wine-like body. Odisha's dry-season sun creates ideal conditions for natural processing.",
+    farms: farms.filter((f) => f.processing.includes("natural")).length,
+    bgColor: "bg-[#C2410C]",
+    textColor: "text-white",
   },
   {
-    iconBg: "bg-blue-100",
-    iconColor: "text-blue-700",
-    path: "M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18",
-    title: "Tech Solutions",
-    description: "Management tools, D2C infrastructure, and digital operations built for the tea and coffee supply chain.",
+    method: "honey" as ProcessingMethod,
+    title: "Honey",
+    subtitle: "Sweetness & Balance",
+    description:
+      "Pulp is removed but varying levels of mucilage are retained on the parchment during drying. This hybrid method bridges washed clarity and natural sweetness, producing honeyed, caramel-rich cups. Several OCGA estates have pioneered honey processing in Odisha.",
+    farms: farms.filter((f) => f.processing.includes("honey")).length,
+    bgColor: "bg-[#E3A008]",
+    textColor: "text-black",
   },
 ];
 
-const techCards = [
-  {
-    iconBg: "bg-green-100",
-    iconColor: "text-green-700",
-    path: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-    title: "Yield & Harvest Analytics",
-    description: "Track harvest volumes, predict yields by lot, and monitor per-hectare output across seasons.",
-  },
-  {
-    iconBg: "bg-amber-100",
-    iconColor: "text-amber-700",
-    path: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064",
-    title: "Origin & Traceability",
-    description: "Lot-level records tied to farm location, processing method, and export documentation.",
-  },
-  {
-    iconBg: "bg-blue-100",
-    iconColor: "text-blue-700",
-    path: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-    title: "Quality Control & Grading",
-    description: "Log cupping scores, defect rates, and moisture readings per batch across stations.",
-  },
-  {
-    iconBg: "bg-orange-100",
-    iconColor: "text-orange-700",
-    path: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
-    title: "Inventory & Stock Management",
-    description: "Real-time visibility from cherry to export-ready bags across your warehouse.",
-  },
-  {
-    iconBg: "bg-purple-100",
-    iconColor: "text-purple-700",
-    path: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
-    title: "Export & Compliance Docs",
-    description: "Phytosanitary certs, ICO forms, and buyer contracts — organized and audit-ready.",
-  },
-  {
-    iconBg: "bg-teal-100",
-    iconColor: "text-teal-700",
-    path: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
-    title: "Worker & Labour Tracking",
-    description: "Picker counts, wages, and payroll simplified for seasonal labour across estates.",
-  },
-  {
-    iconBg: "bg-indigo-100",
-    iconColor: "text-indigo-700",
-    path: "M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01",
-    title: "Infrastructure & DevOps",
-    description: "Scalable cloud infrastructure, CI/CD pipelines, and automated deployments that grow with your brand.",
-  },
-  {
-    iconBg: "bg-red-100",
-    iconColor: "text-red-700",
-    path: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
-    title: "Security & Compliance",
-    description: "End-to-end security solutions, PCI compliance, and data protection for customer trust.",
-  },
-  {
-    iconBg: "bg-cyan-100",
-    iconColor: "text-cyan-700",
-    path: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-    title: "Analytics & Insights",
-    description: "Customer behavior analytics, conversion tracking, and business intelligence dashboards.",
-  },
-  {
-    iconBg: "bg-pink-100",
-    iconColor: "text-pink-700",
-    path: "M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z",
-    title: "E-commerce Optimization",
-    description: "Performance optimization, payment integrations, and checkout experience enhancements.",
-  },
-  {
-    iconBg: "bg-emerald-100",
-    iconColor: "text-emerald-700",
-    path: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
-    title: "Customer Experience",
-    description: "Personalization engines, support systems, and loyalty program integrations.",
-  },
-  {
-    iconBg: "bg-violet-100",
-    iconColor: "text-violet-700",
-    path: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
-    title: "Operations & Automation",
-    description: "Inventory management, order fulfillment, and supply chain automation solutions.",
-  },
-];
-
-export default function Home() {
-  const [techDialogOpen, setTechDialogOpen] = useState(false);
-
+// ── Page ────────────────────────────────────────────────────────────────
+export default function HomePage() {
   return (
     <div>
-      <Script
-        id="org-ld-json"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Gray Cup",
-            url: "https://graycup.org",
-            description: "Global exporter of coffee, tea and spices.",
-          }),
-        }}
-      />
-      <div className="mx-auto px-4 lg:px-6 h-auto my-10">
-        <div className="md:min-h-screen pt-10 pb-20 max-w-6xl mx-auto md:pb-0 flex flex-col justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-[70%_30%] gap-6 items-center">
-            {/* Left Column */}
-            <div>
-              <div>
-                <span className="mb-4 sm:ml-0.5 text-sm font-medium uppercase text-neutral-500">
-                  We Support Sustainability
-                </span>
-                <h1 className="relative text-black text-3xl sm:text-4xl lg:text-5xl font-medium sm:leading-[60px] ">
-                  Tea, Coffee,
-                  <br />
-                  and <span>Liquid</span>.
-                  <br />
-                  Poured into Humans.
-                </h1>
-              </div>
-
-              <div className="flex relative mt-10 flex-col max:smml-4 ">
-                <div className="flex flex-row gap-4">
-                  <a href="/contact" target="_blank">
-                    <Button variant="lightgray" size="sm" className="">
-                      Contact Us
-                    </Button>
-                  </a>
-                  <a
-                    href="/shop"
-                  >
-                    <Button variant="default" size="sm">
-                      Shop Products{" "}
-                    </Button>
-                  </a>
-                </div>
-              </div>
+      {/* ── HERO ─────────────────────────────────────────────────────── */}
+      <section className="bg-odisha-red pattachitra-pattern-red">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-20 md:py-28">
+          <div className="max-w-3xl">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-px w-8 bg-odisha-offwhite/50" />
+              <span className="text-xs font-semibold uppercase tracking-widest text-odisha-offwhite/70">
+                Odisha Coffee Growers Association · OCGA
+              </span>
             </div>
 
-            {/* Right Column */}
-            <div className="hidden lg:block">
-              <Image
-                src="/hero-side.png"
-                alt="coffee beans"
-                className="rotate-40 "
-                draggable="false"
-                width={220}
-                height={220}
-              />
-            </div>
-          </div>
+            {/* Headline */}
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-odisha-offwhite leading-[1.1] mb-6">
+              Coffee from the<br />
+              <span className="italic font-normal">Eastern Ghats</span><br />
+              of Odisha
+            </h1>
 
-          <div className="my-20 py-20 bg-neutral-100">
-            <h2 className="text-5xl font-medium text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans"></h2>
-          </div>
-
-          {/* Sourcing & Retail Identity */}
-          <div className="my-10 px-6 py-12">
-            <span className="text-xs font-medium uppercase text-neutral-400 tracking-widest">
-              What We Do
-            </span>
-            <h2 className="mt-3 text-2xl sm:text-3xl font-medium text-neutral-900 max-w-2xl leading-snug">
-              Sourcing and retailing the finest tea and coffee beans — from origin to your cup.
-            </h2>
-            <p className="mt-4 text-sm sm:text-base text-neutral-500 max-w-xl leading-relaxed">
-              Gray Cup operates as both a <span className="font-medium text-neutral-700">sourcing company</span> and a <span className="font-medium text-neutral-700">retail company</span>. We work directly with growers to source premium tea and coffee beans, and we bring those products to consumers and businesses who care about quality and transparency. We also provide <span className="font-medium text-neutral-700">tech solutions</span> for farms and D2C brands built around the real challenges of the coffee supply chain.
+            {/* Sub */}
+            <p className="text-odisha-offwhite/75 text-base sm:text-lg leading-relaxed max-w-xl mb-8">
+              24 verified growers. Single-origin lots from Koraput's highlands at 800–1500m.
+              Fully traceable, export-ready, rooted in the cultural heritage of Odisha.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              {whatWeDoItems.map((item) => (
-                <div key={item.title} className="flex gap-3 items-start">
-                  <div className={`w-8 h-8 rounded-md ${item.iconBg} flex items-center justify-center shrink-0 mt-0.5`}>
-                    <svg className={`w-4 h-4 ${item.iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d={item.path} />
-                    </svg>
-                  </div>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/farms"
+                className="pattachitra-frame inline-block px-6 py-3 bg-odisha-offwhite text-odisha-black text-sm font-semibold border-2 border-odisha-offwhite hover:bg-odisha-yellow hover:border-odisha-yellow transition-colors"
+              >
+                Explore Farms
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-block px-6 py-3 bg-transparent text-odisha-offwhite text-sm font-semibold border-2 border-odisha-offwhite/60 hover:border-odisha-offwhite hover:bg-odisha-offwhite/10 transition-colors"
+              >
+                Wholesale Inquiry
+              </Link>
+            </div>
+
+            {/* Stats */}
+            <div className="mt-14 flex flex-wrap gap-8 border-t border-odisha-offwhite/20 pt-8">
+              {[
+                { value: "24", label: "Member Farms" },
+                { value: "800–1500m", label: "Elevation Range" },
+                { value: "3", label: "Processing Methods" },
+                { value: "Koraput", label: "Primary Region" },
+              ].map(({ value, label }) => (
+                <div key={label}>
+                  <div className="text-2xl font-serif font-bold text-odisha-offwhite">{value}</div>
+                  <div className="text-xs uppercase tracking-widest text-odisha-offwhite/50 mt-0.5">{label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHAT MAKES ODISHA COFFEE UNIQUE ──────────────────────────── */}
+      <section className="bg-odisha-offwhite border-b-2 border-odisha-black pattachitra-pattern">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-16 md:py-20">
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-odisha-black/50">
+              Origin Story
+            </span>
+            <h2 className="mt-2 font-serif text-3xl md:text-4xl font-bold text-odisha-black leading-tight">
+              What makes Odisha coffee exceptional
+            </h2>
+            <p className="mt-4 text-sm text-odisha-black/60 leading-relaxed">
+              The Eastern Ghats of southern Odisha create one of India's most distinctive yet under-recognised coffee growing environments — a combination of altitude, soil, tribal agricultural tradition, and climate that produces coffees of remarkable character.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
+            {[
+              {
+                num: "01",
+                title: "Highland Altitude",
+                body: "Koraput's coffee belt sits at 800–1500m in the Eastern Ghats. The high altitude slows cherry development by weeks, concentrating sugars and building complex aromatics that define the region's cup character.",
+                accent: "bg-odisha-red",
+              },
+              {
+                num: "02",
+                title: "Tribal Cultivation",
+                body: "Coffee here is grown on small tribal-owned plots, farmed by Kondh and Bhond communities with deep generational knowledge of the land. This human story is embedded in every lot we export.",
+                accent: "bg-odisha-blue",
+              },
+              {
+                num: "03",
+                title: "Forest Shade Cover",
+                body: "Most Odisha coffee grows under a natural canopy of silver oak and native trees. The shade creates a cooler, more humid microclimate that reduces stress on the plant and produces denser, higher-quality beans.",
+                accent: "bg-odisha-green",
+              },
+              {
+                num: "04",
+                title: "Koraput Microclimate",
+                body: "The convergence of the Bay of Bengal monsoon, the Deccan plateau dry season, and Eastern Ghats topography creates a unique rhythm of wet and dry that is ideal for both cherry development and post-harvest drying.",
+                accent: "bg-odisha-orange",
+              },
+            ].map(({ num, title, body, accent }) => (
+              <div
+                key={num}
+                className="border-2 border-odisha-black -ml-[2px] -mt-[2px] p-6 bg-white"
+              >
+                <div className={`w-8 h-1 ${accent} mb-4`} />
+                <div className="font-serif text-xs font-bold text-odisha-black/30 mb-2 tracking-widest">{num}</div>
+                <h3 className="font-serif font-semibold text-odisha-black text-lg mb-3 leading-snug">{title}</h3>
+                <p className="text-sm text-odisha-black/60 leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED FARMS ───────────────────────────────────────────── */}
+      <section className="bg-white border-b-2 border-odisha-black">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-16 md:py-20">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-widest text-odisha-black/50">
+                The Growers
+              </span>
+              <h2 className="mt-2 font-serif text-3xl md:text-4xl font-bold text-odisha-black leading-tight">
+                Featured member farms
+              </h2>
+            </div>
+            <Link
+              href="/farms"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-odisha-red border-b-2 border-odisha-red pb-0.5 hover:text-odisha-black hover:border-odisha-black transition-colors whitespace-nowrap"
+            >
+              View all {farms.length} farms
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
+            {featuredFarms.map((farm) => (
+              <div key={farm.id} className="-ml-[2px] -mt-[2px]">
+                <FarmCard farm={farm} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PROCESSING METHODS ───────────────────────────────────────── */}
+      <section className="bg-odisha-black border-b-2 border-odisha-black">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-16 md:py-20">
+          <div className="max-w-2xl mb-10">
+            <span className="text-xs font-semibold uppercase tracking-widest text-odisha-offwhite/40">
+              Processing Methods
+            </span>
+            <h2 className="mt-2 font-serif text-3xl md:text-4xl font-bold text-odisha-offwhite leading-tight">
+              The art of processing
+            </h2>
+            <p className="mt-3 text-sm text-odisha-offwhite/50 leading-relaxed">
+              How a coffee is processed after harvest shapes its flavour as much as where it was grown. OCGA estates practise all three primary methods, giving buyers precise choice over the cup character they source.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+            {processingMethods.map(({ method, title, subtitle, description, farms: count, bgColor, textColor }) => (
+              <div
+                key={method}
+                className={`border-2 border-odisha-offwhite/20 -ml-[2px] -mt-[2px] p-6 ${bgColor} ${textColor}`}
+              >
+                <div className="flex items-start justify-between gap-3 mb-4">
                   <div>
-                    <h3 className="text-sm font-semibold text-neutral-900">{item.title}</h3>
-                    <p className="text-xs text-neutral-500 mt-0.5 leading-relaxed max-w-xs">
-                      {item.description}
+                    <h3 className="font-serif text-2xl font-bold leading-none">{title}</h3>
+                    <p className="text-sm font-medium opacity-70 mt-1">{subtitle}</p>
+                  </div>
+                  <span className="text-3xl font-serif font-bold opacity-20">{count}</span>
+                </div>
+                <p className="text-sm leading-relaxed opacity-80 mb-5">{description}</p>
+                <Link
+                  href={`/products?processing=${method}`}
+                  className={`inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest border-b pb-0.5 opacity-80 hover:opacity-100 transition-opacity border-current`}
+                >
+                  View {title} Lots
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHOLESALE & EXPORT ───────────────────────────────────────── */}
+      <section className="bg-odisha-blue pattachitra-pattern-red border-b-2 border-odisha-black">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-16 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-widest text-white/50">
+                For Buyers &amp; Importers
+              </span>
+              <h2 className="mt-2 font-serif text-3xl md:text-4xl font-bold text-white leading-tight">
+                Odisha coffee wholesale &amp; export
+              </h2>
+              <p className="mt-4 text-sm text-white/70 leading-relaxed">
+                OCGA coordinates export-ready green bean supply from verified member estates across Koraput. All export lots are phytosanitary certified, APEDA registered, and available with full traceability documentation from farm to container.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-block px-6 py-3 bg-white text-odisha-black text-sm font-semibold border-2 border-white hover:bg-odisha-yellow hover:border-odisha-yellow transition-colors"
+                >
+                  Request Samples
+                </Link>
+                <Link
+                  href="/products"
+                  className="inline-block px-6 py-3 bg-transparent text-white text-sm font-semibold border-2 border-white/50 hover:border-white transition-colors"
+                >
+                  View Export Lots
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
+              {[
+                {
+                  title: "Phytosanitary Certified",
+                  desc: "All export consignments are accompanied by phytosanitary certificates from the Dept. of Agriculture, Odisha.",
+                },
+                {
+                  title: "APEDA Registered",
+                  desc: "OCGA exports are registered with APEDA under the Agricultural & Processed Food Products Export Development Authority.",
+                },
+                {
+                  title: "Full Lot Traceability",
+                  desc: "Each export lot is documented by estate, processing date, variety, and moisture content — available to buyers on request.",
+                },
+                {
+                  title: "Minimum Order Flexibility",
+                  desc: "From 50kg specialty micro-lots to full container loads. We work with specialty roasters and commodity importers alike.",
+                },
+              ].map(({ title, desc }) => (
+                <div key={title} className="border-2 border-white/20 -ml-[2px] -mt-[2px] p-5 bg-white/5">
+                  <h4 className="font-serif font-semibold text-white text-sm mb-2">{title}</h4>
+                  <p className="text-xs text-white/60 leading-relaxed">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ALL MEMBER GROWERS ───────────────────────────────────────── */}
+      <section className="bg-odisha-offwhite border-b-2 border-odisha-black pattachitra-pattern">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-16 md:py-20">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-widest text-odisha-black/50">
+                OCGA Members
+              </span>
+              <h2 className="mt-2 font-serif text-3xl font-bold text-odisha-black leading-tight">
+                All {farms.length} member growers
+              </h2>
+            </div>
+            <Link
+              href="/farms"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-odisha-red border-b-2 border-odisha-red pb-0.5 hover:text-odisha-black hover:border-odisha-black transition-colors whitespace-nowrap"
+            >
+              Explore detailed profiles
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
+            {farms.map((farm) => (
+              <Link
+                key={farm.id}
+                href={`/farms/${farm.id}`}
+                className="group border-2 border-odisha-black -ml-[2px] -mt-[2px] p-4 bg-white hover:bg-odisha-red hover:text-white transition-colors"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <h3 className="font-serif font-semibold text-sm leading-snug group-hover:text-white transition-colors">
+                      {farm.name}
+                    </h3>
+                    <p className="text-xs text-odisha-black/50 group-hover:text-white/60 mt-0.5 transition-colors">
+                      {farm.region} · {farm.elevation}
                     </p>
                   </div>
+                  <svg className="w-3.5 h-3.5 shrink-0 mt-0.5 text-odisha-black/30 group-hover:text-white/60 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Tech Solutions */}
-          <div className="mx-auto px-4 lg:px-6 py-10">
-            <div className="mb-6">
-              <span className="text-xs font-medium uppercase text-neutral-500">
-                Tech Solutions
-              </span>
-              <h2 className="mt-2 text-2xl sm:text-3xl font-medium text-neutral-900">
-                Tools for Farms & D2C Brands
-              </h2>
-              <p className="mt-2 text-sm text-neutral-600 max-w-2xl leading-relaxed">
-                From growing and exporting coffee to running a direct-to-consumer brand, we build technology around the real challenges of the supply chain.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl gap-3">
-              {techCards.map((card) => (
-                <div key={card.title} className="bg-neutral-50 p-4 flex gap-3 items-start">
-                  <div className={`w-8 h-8 rounded-md ${card.iconBg} flex items-center justify-center shrink-0`}>
-                    <svg className={`w-4 h-4 ${card.iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d={card.path} />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-0.5">
-                      <h3 className="text-sm font-semibold text-neutral-900">{card.title}</h3>
-                    </div>
-                    <p className="text-xs text-neutral-500 leading-relaxed">{card.description}</p>
-                  </div>
+                <div className="flex flex-wrap gap-1 mt-2">
+                  {farm.processing.map((m) => (
+                    <span
+                      key={m}
+                      className="text-[9px] uppercase tracking-widest font-semibold px-1.5 py-0.5 border border-current opacity-60 group-hover:opacity-80"
+                    >
+                      {processingLabels[m]}
+                    </span>
+                  ))}
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-6">
-              <button
-                onClick={() => setTechDialogOpen(true)}
-                className="inline-flex cursor-pointer items-center gap-2 px-4 py-2 rounded-lg bg-neutral-900 text-white text-sm font-medium hover:bg-neutral-700 transition-colors"
-              >
-                Request Tech Solutions
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
-            </div>
+              </Link>
+            ))}
           </div>
-
-          <TechSolutionsDialog open={techDialogOpen} onOpenChange={setTechDialogOpen} />
-
-          <div className="my-20 flex flex-col md:items-center px-6 py-10 md:py-20 bg-neutral-50 md:grid md:grid-cols-[70%_30%]">
-            <div>
-              <div className="block md:hidden max-md:pb-5">
-                <CoffeeCup />
-              </div>
-
-              <h2 className="text-2xl sm:text-4xl font-medium text-neutral-900 mb-6 font-instrument-sans">
-                Gray Cup Narrative
-              </h2>
-
-              <p className="text-md sm:text-lg mb-10 text-neutral-700 my-4 max-w-2xl leading-relaxed">
-                <span className="mb-4">
-                  Gray Cup creates sustainable, high-quality essentials for
-                  everything that belongs in your cup.
-                </span>
-                {" "}Built on the idea of a{" "}
-                <span className="font-medium">neutral cup</span>, sustainable,
-                balanced, and uncompromising in quality, Gray Cup focuses on
-                what truly matters.
-                <br />
-                <br />
-                From coffee and matcha to tea and future essentials, we do not
-                chase categories or trends.
-                <br />
-                <br />
-                <span className="font-medium text-neutral-900">
-                  The best is what belongs in your cup.
-                </span>
-              </p>
-            </div>
-
-            <div className="hidden md:block">
-              <CoffeeCup />
-            </div>
-
-            <a href="https://discord.gg/gpRxmW63JW" target="_blank">
-              <Button variant="gray">Join Our Discord</Button>
-            </a>
-          </div>
-
-          {/* <Image src="/beans-circle.webp" alt="coffee beans" className="pl-2" width={200} height={200} /> */}
         </div>
-      </div>
-      <div className="px-4 lg:px-6"></div>
-      {/* <CoffeeSection /> */}
+      </section>
 
+      {/* ── BOTTOM CTA ───────────────────────────────────────────────── */}
+      <section className="bg-odisha-red pattachitra-pattern-red">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-16 text-center">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-odisha-offwhite mb-4">
+            Ready to source Odisha coffee?
+          </h2>
+          <p className="text-odisha-offwhite/70 text-sm max-w-xl mx-auto mb-8 leading-relaxed">
+            Whether you're a specialty roaster, a wholesale buyer, or an importer looking for traceable Indian single-origin coffee, OCGA can connect you with the right estate and lot.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link
+              href="/contact"
+              className="px-8 py-3 bg-odisha-offwhite text-odisha-black text-sm font-semibold border-2 border-odisha-offwhite hover:bg-odisha-yellow hover:border-odisha-yellow transition-colors"
+            >
+              Get in Touch
+            </Link>
+            <Link
+              href="/farms"
+              className="px-8 py-3 bg-transparent text-odisha-offwhite text-sm font-semibold border-2 border-odisha-offwhite/60 hover:border-odisha-offwhite transition-colors"
+            >
+              Browse All Farms
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
