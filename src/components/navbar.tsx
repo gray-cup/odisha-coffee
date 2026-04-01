@@ -37,10 +37,10 @@ export function Navbar() {
             </div>
             <div>
               <div className="text-sm font-bold leading-none tracking-wide text-odisha-black font-serif">
-                GRAY CUP
+                ODISHA COFFEE
               </div>
               <div className="text-[10px] font-medium uppercase tracking-widest text-odisha-black/60 leading-none mt-0.5">
-                Odisha Coffee
+                Gray Cup Enterprises
               </div>
             </div>
           </Link>
@@ -94,7 +94,7 @@ export function Navbar() {
           ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
         >
           <div className="flex items-center justify-between mb-8">
-            <span className="font-serif font-bold text-odisha-black text-sm tracking-wide">GRAY CUP</span>
+            <span className="font-serif font-bold text-odisha-black text-sm tracking-wide">ODISHA COFFEE</span>
             <button
               className="p-1 border-2 border-odisha-black hover:bg-odisha-black hover:text-odisha-offwhite transition-colors"
               onClick={() => setMenuOpen(false)}

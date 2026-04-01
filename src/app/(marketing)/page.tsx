@@ -120,7 +120,7 @@ export default function HomePage() {
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-8 bg-odisha-offwhite/50" />
               <span className="text-xs font-semibold uppercase tracking-widest text-odisha-offwhite/70">
-                Gray Cup Enterprises — Odisha Coffee
+                Eastern Ghats · Koraput, Odisha, India
               </span>
             </div>
 
