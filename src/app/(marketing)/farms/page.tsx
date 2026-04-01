@@ -28,23 +28,23 @@ export default function FarmsPage() {
   return (
     <div>
       {/* Header */}
-      <section className="bg-odisha-black border-b-2 border-odisha-black">
+      <section className="bg-odisha-red pattachitra-pattern-red border-b-2 border-odisha-black">
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-14 md:py-18">
           <div className="flex items-center gap-3 mb-5">
             <Link
               href="/"
-              className="text-xs text-white/40 hover:text-white/70 transition-colors uppercase tracking-widest"
+              className="text-xs text-white/60 hover:text-white transition-colors uppercase tracking-widest"
             >
               Home
             </Link>
-            <span className="text-white/20">/</span>
-            <span className="text-xs text-white/60 uppercase tracking-widest">Farms</span>
+            <span className="text-white/30">/</span>
+            <span className="text-xs text-white/80 uppercase tracking-widest">Farms</span>
           </div>
 
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
             Partner Farms
           </h1>
-          <p className="text-white/60 text-sm max-w-2xl leading-relaxed mb-8">
+          <p className="text-white/70 text-sm max-w-2xl leading-relaxed mb-8">
             Gray Cup Enterprises sources from {farms.length} verified coffee estates across Koraput and neighbouring districts of Odisha's Eastern Ghats. Each farm profile documents cultivation practices, processing methods, flavor character, and traceability data.
           </p>
 
@@ -57,9 +57,9 @@ export default function FarmsPage() {
               { value: natCount.toString(), label: "Natural" },
               { value: honeyCount.toString(), label: "Honey" },
             ].map(({ value, label }) => (
-              <div key={label} className="border-l-2 border-white/20 pl-4">
+              <div key={label} className="border-l-2 border-white/30 pl-4">
                 <div className="font-serif text-2xl font-bold text-white">{value}</div>
-                <div className="text-[10px] uppercase tracking-widest text-white/40">{label}</div>
+                <div className="text-[10px] uppercase tracking-widest text-white/60">{label}</div>
               </div>
             ))}
           </div>

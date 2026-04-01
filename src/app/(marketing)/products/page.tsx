@@ -143,7 +143,7 @@ export default function ProductsPage() {
                     )}
                     <Link
                       href={`/contact?product=${product.id}`}
-                      className="block text-center text-xs font-semibold uppercase tracking-widest py-2 bg-odisha-black text-white border-2 border-odisha-black hover:bg-odisha-red hover:border-odisha-red transition-colors"
+                      className="block text-center text-xs font-semibold uppercase tracking-widest py-2 bg-odisha-red text-white border-2 border-odisha-red hover:bg-odisha-red-dark transition-colors"
                     >
                       Inquire / Request Sample
                     </Link>
@@ -213,26 +213,26 @@ export default function ProductsPage() {
       </section>
 
       {/* Wholesale CTA */}
-      <section className="bg-odisha-black border-b-2 border-odisha-black pattachitra-pattern-red">
+      <section className="bg-odisha-offwhite border-b-2 border-odisha-black pattachitra-pattern">
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
           <div>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-2">
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-odisha-black mb-2">
               Looking for bulk green beans or custom lots?
             </h2>
-            <p className="text-white/50 text-sm leading-relaxed max-w-xl">
-              Gray Cup can source any quantity from individual estates or pooled member supplies. We work with specialty roasters, importers, and commodity buyers with full documentation.
+            <p className="text-odisha-black/60 text-sm leading-relaxed max-w-xl">
+              Gray Cup can source any quantity from individual estates or pooled partner supplies. We work with specialty roasters, importers, and commodity buyers with full documentation.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="inline-block px-6 py-3 bg-white text-odisha-black text-sm font-semibold border-2 border-white hover:bg-odisha-yellow hover:border-odisha-yellow transition-colors whitespace-nowrap"
+              className="inline-block px-6 py-3 bg-odisha-red text-white text-sm font-semibold border-2 border-odisha-red hover:bg-odisha-red-dark transition-colors whitespace-nowrap"
             >
               Wholesale Inquiry
             </Link>
             <Link
               href="/farms"
-              className="inline-block px-6 py-3 bg-transparent text-white text-sm font-semibold border-2 border-white/40 hover:border-white transition-colors whitespace-nowrap"
+              className="inline-block px-6 py-3 bg-transparent text-odisha-black text-sm font-semibold border-2 border-odisha-black hover:bg-odisha-black hover:text-white transition-colors whitespace-nowrap"
             >
               Browse Farms
             </Link>

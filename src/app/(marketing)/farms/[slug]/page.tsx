@@ -58,26 +58,26 @@ export default async function FarmDetailPage({
   return (
     <div>
       {/* ── HEADER ───────────────────────────────────────────────────── */}
-      <section className="bg-odisha-black border-b-2 border-odisha-black">
+      <section className="bg-odisha-red pattachitra-pattern-red border-b-2 border-odisha-black">
         <div className="max-w-7xl mx-auto px-4 lg:px-6 pt-10 pb-12">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-6 text-xs">
-            <Link href="/" className="text-white/40 hover:text-white/70 uppercase tracking-widest transition-colors">
+            <Link href="/" className="text-white/60 hover:text-white uppercase tracking-widest transition-colors">
               Home
             </Link>
-            <span className="text-white/20">/</span>
-            <Link href="/farms" className="text-white/40 hover:text-white/70 uppercase tracking-widest transition-colors">
+            <span className="text-white/30">/</span>
+            <Link href="/farms" className="text-white/60 hover:text-white uppercase tracking-widest transition-colors">
               Farms
             </Link>
-            <span className="text-white/20">/</span>
-            <span className="text-white/60 uppercase tracking-widest">{farm.name}</span>
+            <span className="text-white/30">/</span>
+            <span className="text-white/80 uppercase tracking-widest">{farm.name}</span>
           </div>
 
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-3 mb-3">
                 {farm.exportReady && (
-                  <span className="text-[10px] font-bold uppercase tracking-widest border-2 border-odisha-green text-odisha-green px-2 py-0.5">
+                  <span className="text-[10px] font-bold uppercase tracking-widest border-2 border-white text-white px-2 py-0.5">
                     Export Ready
                   </span>
                 )}
@@ -90,7 +90,7 @@ export default async function FarmDetailPage({
               <h1 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-3">
                 {farm.name}
               </h1>
-              <p className="text-white/60 text-sm flex items-center gap-2">
+              <p className="text-white/70 text-sm flex items-center gap-2">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -234,8 +234,8 @@ export default async function FarmDetailPage({
               </div>
 
               {/* Traceability block */}
-              <div className="border-2 border-odisha-black p-5 bg-odisha-black text-white">
-                <h3 className="font-serif font-bold text-white text-sm mb-4 uppercase tracking-wide">
+              <div className="border-2 border-odisha-black p-5 bg-odisha-offwhite">
+                <h3 className="font-serif font-bold text-odisha-black text-sm mb-4 uppercase tracking-wide">
                   Traceability Data
                 </h3>
                 <div className="space-y-3 text-xs">
@@ -249,9 +249,9 @@ export default async function FarmDetailPage({
                     { label: "Harvest Season", value: farm.harvestSeason },
                     { label: "Export Ready", value: farm.exportReady ? "Yes" : "Contact Gray Cup" },
                   ].map(({ label, value }) => (
-                    <div key={label} className="flex justify-between gap-2 border-b border-white/10 pb-2">
-                      <span className="text-white/50 uppercase tracking-widest text-[10px]">{label}</span>
-                      <span className="text-white/90 font-medium text-right">{value}</span>
+                    <div key={label} className="flex justify-between gap-2 border-b border-odisha-black/10 pb-2">
+                      <span className="text-odisha-black/50 uppercase tracking-widest text-[10px]">{label}</span>
+                      <span className="text-odisha-black font-medium text-right">{value}</span>
                     </div>
                   ))}
                 </div>
@@ -372,7 +372,7 @@ export default async function FarmDetailPage({
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <Link
             href="/farms"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-odisha-black border-2 border-odisha-black px-4 py-2 hover:bg-odisha-black hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-odisha-black border-2 border-odisha-black px-4 py-2 hover:bg-odisha-red hover:border-odisha-red hover:text-white transition-colors"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />

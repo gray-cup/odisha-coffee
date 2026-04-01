@@ -64,7 +64,7 @@ function FarmCard({ farm }: { farm: (typeof farms)[0] }) {
       </div>
 
       {/* Bottom stripe */}
-      <div className="border-t-2 border-odisha-black px-5 py-2 flex items-center justify-between bg-odisha-black/5">
+      <div className="border-t-2 border-odisha-black px-5 py-2 flex items-center justify-between bg-odisha-offwhite">
         <span className="text-[10px] uppercase tracking-widest text-odisha-black/50">{farm.area}</span>
         <svg className="w-3.5 h-3.5 text-odisha-black/40 group-hover:text-odisha-red transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -261,16 +261,16 @@ export default function HomePage() {
       </section>
 
       {/* ── PROCESSING METHODS ───────────────────────────────────────── */}
-      <section className="bg-odisha-black border-b-2 border-odisha-black">
+      <section className="bg-white border-b-2 border-odisha-black">
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-16 md:py-20">
           <div className="max-w-2xl mb-10">
-            <span className="text-xs font-semibold uppercase tracking-widest text-odisha-offwhite/40">
+            <span className="text-xs font-semibold uppercase tracking-widest text-odisha-black/40">
               Processing Methods
             </span>
-            <h2 className="mt-2 font-serif text-3xl md:text-4xl font-bold text-odisha-offwhite leading-tight">
+            <h2 className="mt-2 font-serif text-3xl md:text-4xl font-bold text-odisha-black leading-tight">
               The art of processing
             </h2>
-            <p className="mt-3 text-sm text-odisha-offwhite/50 leading-relaxed">
+            <p className="mt-3 text-sm text-odisha-black/60 leading-relaxed">
               How a coffee is processed after harvest shapes its flavour as much as where it was grown. Our partner farms practise all three primary methods, giving buyers precise choice over the cup character they source.
             </p>
           </div>
@@ -279,7 +279,7 @@ export default function HomePage() {
             {processingMethods.map(({ method, title, subtitle, description, farms: count, bgColor, textColor }) => (
               <div
                 key={method}
-                className={`border-2 border-odisha-offwhite/20 -ml-[2px] -mt-[2px] p-6 ${bgColor} ${textColor}`}
+                className={`border-2 border-odisha-black -ml-[2px] -mt-[2px] p-6 ${bgColor} ${textColor}`}
               >
                 <div className="flex items-start justify-between gap-3 mb-4">
                   <div>
@@ -305,29 +305,29 @@ export default function HomePage() {
       </section>
 
       {/* ── WHOLESALE & EXPORT ───────────────────────────────────────── */}
-      <section className="bg-odisha-blue pattachitra-pattern-red border-b-2 border-odisha-black">
+      <section className="bg-odisha-offwhite pattachitra-pattern border-b-2 border-odisha-black">
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-white/50">
+              <span className="text-xs font-semibold uppercase tracking-widest text-odisha-black/50">
                 For Buyers &amp; Importers
               </span>
-              <h2 className="mt-2 font-serif text-3xl md:text-4xl font-bold text-white leading-tight">
+              <h2 className="mt-2 font-serif text-3xl md:text-4xl font-bold text-odisha-black leading-tight">
                 Odisha coffee wholesale &amp; export
               </h2>
-              <p className="mt-4 text-sm text-white/70 leading-relaxed">
-               Gray Cup coordinates export-ready green bean supply from verified member estates across Koraput. All export lots are phytosanitary certified, APEDA registered, and available with full traceability documentation from farm to container.
+              <p className="mt-4 text-sm text-odisha-black/60 leading-relaxed">
+               Gray Cup coordinates export-ready green bean supply from verified partner estates across Koraput. All export lots are phytosanitary certified, APEDA registered, and available with full traceability documentation from farm to container.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-block px-6 py-3 bg-white text-odisha-black text-sm font-semibold border-2 border-white hover:bg-odisha-yellow hover:border-odisha-yellow transition-colors"
+                  className="inline-block px-6 py-3 bg-odisha-red text-white text-sm font-semibold border-2 border-odisha-red hover:bg-odisha-red-dark transition-colors"
                 >
                   Request Samples
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-block px-6 py-3 bg-transparent text-white text-sm font-semibold border-2 border-white/50 hover:border-white transition-colors"
+                  className="inline-block px-6 py-3 bg-transparent text-odisha-black text-sm font-semibold border-2 border-odisha-black hover:bg-odisha-black hover:text-white transition-colors"
                 >
                   View Export Lots
                 </Link>
@@ -353,9 +353,9 @@ export default function HomePage() {
                   desc: "From 50kg specialty micro-lots to full container loads. We work with specialty roasters and commodity importers alike.",
                 },
               ].map(({ title, desc }) => (
-                <div key={title} className="border-2 border-white/20 -ml-[2px] -mt-[2px] p-5 bg-white/5">
-                  <h4 className="font-serif font-semibold text-white text-sm mb-2">{title}</h4>
-                  <p className="text-xs text-white/60 leading-relaxed">{desc}</p>
+                <div key={title} className="border-2 border-odisha-black -ml-[2px] -mt-[2px] p-5 bg-white">
+                  <h4 className="font-serif font-semibold text-odisha-black text-sm mb-2">{title}</h4>
+                  <p className="text-xs text-odisha-black/60 leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>

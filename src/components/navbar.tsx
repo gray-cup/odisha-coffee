@@ -51,7 +51,7 @@ export function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className="px-3 py-2 hover:bg-odisha-black hover:text-odisha-offwhite transition-colors border border-transparent hover:border-odisha-black"
+                className="px-3 py-2 hover:bg-odisha-red hover:text-white transition-colors border border-transparent hover:border-odisha-red"
               >
                 {label}
               </Link>
@@ -70,7 +70,7 @@ export function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden inline-flex items-center justify-center p-2 border-2 border-odisha-black hover:bg-odisha-black hover:text-odisha-offwhite transition-colors"
+            className="md:hidden inline-flex items-center justify-center p-2 border-2 border-odisha-black hover:bg-odisha-red hover:border-odisha-red hover:text-white transition-colors"
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
           >
@@ -96,7 +96,7 @@ export function Navbar() {
           <div className="flex items-center justify-between mb-8">
             <span className="font-serif font-bold text-odisha-black text-sm tracking-wide">ODISHA COFFEE</span>
             <button
-              className="p-1 border-2 border-odisha-black hover:bg-odisha-black hover:text-odisha-offwhite transition-colors"
+              className="p-1 border-2 border-odisha-black hover:bg-odisha-red hover:border-odisha-red hover:text-white transition-colors"
               onClick={() => setMenuOpen(false)}
               aria-label="Close menu"
             >
@@ -112,7 +112,7 @@ export function Navbar() {
                 key={href}
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className="px-3 py-3 border-b border-odisha-black/20 text-sm font-medium hover:bg-odisha-black hover:text-odisha-offwhite transition-colors"
+                className="px-3 py-3 border-b border-odisha-black/20 text-sm font-medium hover:bg-odisha-red hover:text-white hover:border-odisha-red transition-colors"
               >
                 {label}
               </Link>
