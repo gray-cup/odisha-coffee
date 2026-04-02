@@ -23,7 +23,7 @@ Create a utility:
 ```
 
 ```ts
-export const SITE_NAME = "Gray Cup"
+export const SITE_NAME = "Odisha Coffee"
 
 export function generateTitle(title: string) {
   const full = `${title} | ${SITE_NAME}`
