@@ -27,6 +27,7 @@ const fontPublicSans = Public_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://odishacoffee.com"),
   title: {
     default: "Odisha Coffee — Wholesale, Export & Farm Sourcing | Odissi Coffee",
     template: "%s | Odisha Coffee",
@@ -56,15 +57,17 @@ export const metadata: Metadata = {
     title: "Odisha Coffee — Wholesale, Export & Farm Sourcing | Odissi Coffee",
     description:
       "Odisha Coffee (Odissi Coffee) — single-origin coffee from Koraput's Eastern Ghats. Wholesale green beans, traceable export lots, 24 verified partner farms. Sourced by Gray Cup Enterprises.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Odisha Coffee — Koraput, Eastern Ghats" }],
+    images: [{ url: "https://odishacoffee.com/og.png", width: 1200, height: 630, alt: "Odisha Coffee — Koraput, Eastern Ghats" }],
     type: "website",
+    locale: "en_IN",
+    siteName: "Odisha Coffee",
   },
   twitter: {
     card: "summary_large_image",
     title: "Odisha Coffee — Wholesale, Export & Farm Sourcing | Odissi Coffee",
     description:
       "Odisha Coffee (Odissi Coffee) — single-origin coffee from the Eastern Ghats of Koraput. Wholesale, export, and direct farm sourcing.",
-    images: ["/og.png"],
+    images: ["https://odishacoffee.com/og.png"],
   },
 };
 
@@ -83,6 +86,50 @@ export default function RootLayout({
           fontPublicSans.variable,
         )}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "@id": "https://odishacoffee.com/#organization",
+              name: "Odisha Coffee",
+              alternateName: "Odissi Coffee",
+              legalName: "Gray Cup Enterprises Pvt. Ltd.",
+              url: "https://odishacoffee.com",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://odishacoffee.com/logo.png",
+                width: 512,
+                height: 512,
+              },
+              description:
+                "Single-origin Odisha coffee from the Eastern Ghats of Koraput — wholesale green beans, export lots, and direct farm sourcing.",
+              email: "office@graycup.org",
+              foundingDate: "2019",
+              sameAs: [
+                "https://www.linkedin.com/company/gray-cup/",
+                "https://www.instagram.com/thegraycup",
+                "https://x.com/TheGrayCup",
+                "https://www.indiamart.com/gray-cup-enterprises/",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "office@graycup.org",
+                contactType: "sales",
+                areaServed: "Worldwide",
+                availableLanguage: ["English", "Hindi"],
+              },
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "IN",
+                addressRegion: "Odisha",
+              },
+              areaServed: "Worldwide",
+              additionalType: "http://www.productontology.org/id/Wholesaler",
+            }),
+          }}
+        />
         <Analytics />
         <RootProviders>{children}</RootProviders>
         <WhatsappWidget />

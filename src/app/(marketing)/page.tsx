@@ -1,6 +1,21 @@
 import Link from "next/link";
 import { farms, featuredFarms, processingColors, processingLabels } from "@/data/farms";
 import type { ProcessingMethod } from "@/data/farms";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Odisha Coffee — Wholesale, Export & Farm Sourcing | Odissi Coffee",
+  description:
+    "Buy Odisha Coffee (Odissi Coffee) wholesale — traceable Arabica & Robusta from 24 verified farms in Koraput's Eastern Ghats. Export lots, green bean wholesale, and direct farm sourcing by Gray Cup Enterprises.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Odisha Coffee — Wholesale, Export & Farm Sourcing | Odissi Coffee",
+    description:
+      "Traceable Arabica & Robusta from 24 verified farms in Koraput's Eastern Ghats. Wholesale, export, and direct farm sourcing by Gray Cup Enterprises.",
+    url: "https://odishacoffee.com",
+    locale: "en_IN",
+  },
+};
 
 // ── Reusable tag ────────────────────────────────────────────────────────
 function ProcessingTag({ method }: { method: ProcessingMethod }) {
