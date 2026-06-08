@@ -1,6 +1,6 @@
 import type { ProcessingMethod } from "./farms";
 
-export type RoastLevel = "light" | "medium" | "medium-dark" | "dark";
+export type RoastLevel = "green" | "light" | "medium" | "medium-dark" | "dark";
 
 export type Product = {
   id: string;
@@ -15,12 +15,184 @@ export type Product = {
   description: string;
   brewingNotes: string;
   availability: "in-stock" | "limited" | "seasonal";
-  weightOptions: string[]; // e.g. ["250g", "500g", "1kg"]
+  weightOptions: string[];
   exportAvailable: boolean;
   minOrderExport?: string;
+  pricePerKg: number; // INR
+  isGreen?: boolean;  // green/unroasted bean
+  image?: string;     // path under /products/
 };
 
 export const products: Product[] = [
+  // ── NEW PRODUCTS ─────────────────────────────────────────────────────────
+
+  {
+    id: "koraput-hsd-washed",
+    name: "Koraput HSD Washed",
+    farmId: "koraput-a1-coffee",
+    farmName: "Multiple Gray Cup Partner Farms",
+    region: "Koraput District",
+    processing: "washed",
+    variety: "Arabica HSD (Hibrido de Timor)",
+    roastLevel: "green",
+    flavorNotes: ["Citrus", "Green Apple", "Clean", "Bright Acidity"],
+    description:
+      "Export-grade HSD Arabica green beans, washed-processed from Koraput's high-altitude estates. Screen 15+ sorted, moisture 10–12%, lot-tested. Ideal for specialty roasters seeking traceable Indian-origin Arabica with consistent cup clarity and bright character.",
+    brewingNotes:
+      "Roasters: recommend medium-light profile, first crack +20s. HSD responds well to a gentle development phase — highlight the citrus and clean acidity.",
+    availability: "in-stock",
+    weightOptions: ["250g", "1kg", "5kg"],
+    exportAvailable: true,
+    minOrderExport: "100kg green beans",
+    pricePerKg: 1600,
+    isGreen: true,
+    image: "koraput-green.png",
+  },
+  {
+    id: "koraput-naturals",
+    name: "Koraput Naturals",
+    farmId: "koraput-a1-coffee",
+    farmName: "Multiple Gray Cup Partner Farms",
+    region: "Koraput District",
+    processing: "natural",
+    variety: "Arabica S795 & Robusta",
+    roastLevel: "green",
+    flavorNotes: ["Dark Fruit", "Chocolate", "Earthy", "Full Body"],
+    description:
+      "Natural-processed green bean lots from Koraput — cherries sun-dried whole for 25–30 days on raised beds. Fruit-integrated and complex, these lots are excellent for espresso blends, natural roast profiles, and buyers seeking Indian naturals with depth.",
+    brewingNotes:
+      "Roasters: medium to medium-dark roast profiles work best. Allow longer development time (DTR 22–25%) to unlock the fruit-chocolate complexity. Blends beautifully with washed Arabica.",
+    availability: "in-stock",
+    weightOptions: ["250g", "1kg", "5kg"],
+    exportAvailable: true,
+    minOrderExport: "200kg green beans",
+    pricePerKg: 1800,
+    isGreen: true,
+    image: "koraput-green.png",
+  },
+  {
+    id: "hsd-roasted",
+    name: "HSD Roasted",
+    farmId: "koraput-a1-coffee",
+    farmName: "Gray Cup Roastery",
+    region: "Koraput District",
+    processing: "washed",
+    variety: "Arabica HSD",
+    roastLevel: "light",
+    flavorNotes: ["Citrus Blossom", "Peach", "Honey", "Clean Finish"],
+    description:
+      "Our washed HSD Arabica from Koraput, roasted light to preserve the variety's natural brightness. Slow-roasted in small batches, rested 48 hours before dispatch. A remarkably clean, floral cup that showcases what Eastern Ghats Arabica can offer at its best.",
+    brewingNotes:
+      "Ideal for pour-over, V60, or Chemex. Water at 90–92°C, 1:16 ratio. Grind medium-fine. The light roast rewards slow extraction — allow full 3–4 minute brew time.",
+    availability: "in-stock",
+    weightOptions: ["100g", "250g", "500g", "1kg"],
+    exportAvailable: false,
+    pricePerKg: 2800,
+    image: "koraput-coffee.png",
+  },
+  {
+    id: "naturals-roasted",
+    name: "Naturals Roasted",
+    farmId: "koraput-a1-coffee",
+    farmName: "Gray Cup Roastery",
+    region: "Koraput District",
+    processing: "natural",
+    variety: "Arabica S795 & Robusta",
+    roastLevel: "medium",
+    flavorNotes: ["Dark Cherry", "Dark Chocolate", "Dried Fruit", "Syrupy Body"],
+    description:
+      "Natural-processed Koraput coffee roasted to medium, where the fruit-integration of the drying process reaches its peak. Rich, syrupy, and deeply satisfying — this is an exceptional everyday filter coffee or a crowd-pleasing espresso base.",
+    brewingNotes:
+      "Excellent as filter or espresso. Pour-over at 93°C, 1:15 ratio. As espresso: 25–28 second extraction. The natural sweetness pairs brilliantly with milk-based drinks.",
+    availability: "in-stock",
+    weightOptions: ["100g", "250g", "500g", "1kg"],
+    exportAvailable: false,
+    pricePerKg: 3200,
+    image: "koraput-coffee.png",
+  },
+  {
+    id: "strawberry-roasted",
+    name: "Strawberry Roasted",
+    farmId: "oak-winds-farm",
+    farmName: "Oak Winds Farm × Gray Cup Roastery",
+    region: "Pottangi, Koraput",
+    processing: "natural",
+    variety: "Arabica SLN 9",
+    roastLevel: "light",
+    flavorNotes: ["Fresh Strawberry", "Rose Hip", "Hibiscus", "Tropical Sweetness"],
+    description:
+      "A rare anaerobic natural lot from Oak Winds Farm, processed with extended cherry fermentation that produces vivid strawberry and floral notes. Roasted light to let the process-driven character sing. Each batch is limited — when it's gone, it's gone until next season.",
+    brewingNotes:
+      "Best as pour-over or AeroPress at 88–90°C (lower temp amplifies the strawberry). 1:15 ratio, medium grind. Try as a cold brew for a stunning no-heat-needed strawberry sweetness.",
+    availability: "limited",
+    weightOptions: ["100g", "250g", "500g", "1kg"],
+    exportAvailable: false,
+    pricePerKg: 4200,
+    image: "koraput-coffee.png",
+  },
+  {
+    id: "whiskey-rum-roasted",
+    name: "Whiskey Rum Roasted",
+    farmId: "dream-hill-coffee",
+    farmName: "Dream Hill Coffee × Gray Cup Roastery",
+    region: "Pottangi, Koraput",
+    processing: "natural",
+    variety: "Arabica Catuai",
+    roastLevel: "medium-dark",
+    flavorNotes: ["Toasted Oak", "Molasses", "Vanilla", "Dark Fruit", "Spirit Warmth"],
+    description:
+      "Honey-processed Catuai aged in reclaimed whiskey and rum barrels from Odisha distilleries. The 30-day barrel rest imparts layers of vanilla, oak, and spirit warmth onto the coffee's natural sweetness. A conversation piece roast — complex, bold, and absolutely unmistakable.",
+    brewingNotes:
+      "Moka pot or espresso for the full barrel intensity. French press at 94°C, 4-minute steep — the oils and body come through beautifully. Pairs exceptionally with a drop of cream.",
+    availability: "limited",
+    weightOptions: ["100g", "250g", "500g"],
+    exportAvailable: false,
+    pricePerKg: 5200,
+    image: "koraput-coffee.png",
+  },
+  {
+    id: "espresso-8020",
+    name: "Espresso 80/20",
+    farmId: "koraput-a1-coffee",
+    farmName: "Gray Cup Roastery",
+    region: "Koraput District",
+    processing: "washed",
+    variety: "80% Arabica S795 + 20% Robusta",
+    roastLevel: "medium-dark",
+    flavorNotes: ["Dark Chocolate", "Caramel", "Hazelnut", "Thick Crema", "Low Acidity"],
+    description:
+      "Our house espresso blend — 80% washed Arabica S795 for sweetness and structure, 20% Koraput Robusta for crema density and caffeine kick. Roasted medium-dark for a balanced, forgiving shot that works beautifully across all espresso machines and milk ratios.",
+    brewingNotes:
+      "Dial to 9 bars, 93°C, 25–28 seconds, 1:2 ratio. For milk drinks, pull slightly longer (30s) for extra sweetness. Forgiving on dose — ±2g from recipe still yields a good shot.",
+    availability: "in-stock",
+    weightOptions: ["100g", "250g", "500g", "1kg"],
+    exportAvailable: false,
+    pricePerKg: 2400,
+    image: "koraput-coffee.png",
+  },
+  {
+    id: "espresso-100-arabica",
+    name: "Espresso 100 Arabica",
+    farmId: "annapurna-coffee-estate",
+    farmName: "Gray Cup Roastery",
+    region: "Koraput District",
+    processing: "washed",
+    variety: "100% Arabica S795",
+    roastLevel: "medium",
+    flavorNotes: ["Milk Chocolate", "Brown Sugar", "Almond", "Smooth Finish"],
+    description:
+      "A single-origin 100% Arabica espresso from Koraput's Sunabeda plateau. Roasted medium to preserve the variety's natural sweetness while building espresso body. Clean, smooth, and approachable — a perfect gateway to Indian specialty espresso.",
+    brewingNotes:
+      "Best at 93°C, 9 bars, 27–30 seconds, 1:2.2 ratio. The all-Arabica character shines brightest as a straight espresso or flat white. Avoid over-extraction — the sweetness lives in the first half of the shot.",
+    availability: "in-stock",
+    weightOptions: ["100g", "250g", "500g", "1kg"],
+    exportAvailable: false,
+    pricePerKg: 3000,
+    image: "koraput-coffee.png",
+  },
+
+  // ── EXISTING PRODUCTS (with pricing added) ────────────────────────────────
+
   {
     id: "oak-winds-washed-arabica",
     name: "Oak Winds Washed Arabica",
@@ -36,9 +208,11 @@ export const products: Product[] = [
     brewingNotes:
       "Best as pour-over or V60. Use water at 90–92°C. Ratio 1:16. Allow 3–4 minutes total brew time. The light roast expresses the citrus and floral character most fully.",
     availability: "limited",
-    weightOptions: ["250g", "500g"],
+    weightOptions: ["100g", "250g", "500g"],
     exportAvailable: true,
     minOrderExport: "50kg green beans",
+    pricePerKg: 4500,
+    image: "koraput-coffee.png",
   },
   {
     id: "dream-hill-honey-arabica",
@@ -55,9 +229,11 @@ export const products: Product[] = [
     brewingNotes:
       "Excellent as Chemex or AeroPress. Water at 93°C. The honey process creates a syrupy body that shines with longer extraction. Try also as a cold brew for a deeply sweet, low-acidity experience.",
     availability: "seasonal",
-    weightOptions: ["250g", "500g", "1kg"],
+    weightOptions: ["100g", "250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "100kg green beans",
+    pricePerKg: 5000,
+    image: "koraput-coffee.png",
   },
   {
     id: "koraput-a1-natural-robusta",
@@ -74,9 +250,11 @@ export const products: Product[] = [
     brewingNotes:
       "Exceptional as espresso or moka pot. The natural process creates crema density and sweetness that pairs brilliantly with milk. As filter, use medium-dark roast at 91°C for a chocolatey, smooth cup.",
     availability: "in-stock",
-    weightOptions: ["500g", "1kg", "5kg", "25kg"],
+    weightOptions: ["100g", "250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "500kg green beans",
+    pricePerKg: 2800,
+    image: "koraput-coffee.png",
   },
   {
     id: "annapurna-washed-arabica",
@@ -93,9 +271,11 @@ export const products: Product[] = [
     brewingNotes:
       "Pour-over or Kalita Wave. Grind medium-fine. Water at 91°C. The delicate floral notes reward lower water temperature and careful extraction control.",
     availability: "in-stock",
-    weightOptions: ["250g", "500g", "1kg"],
+    weightOptions: ["100g", "250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "100kg green beans",
+    pricePerKg: 3800,
+    image: "koraput-coffee.png",
   },
   {
     id: "koraput-organic-natural",
@@ -112,9 +292,11 @@ export const products: Product[] = [
     brewingNotes:
       "Excellent across multiple brew methods. Particularly beautiful as a cold brew or AeroPress. The organic character and clean terroir translate well to any extraction style.",
     availability: "in-stock",
-    weightOptions: ["250g", "500g", "1kg"],
+    weightOptions: ["100g", "250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "200kg green beans",
+    pricePerKg: 4000,
+    image: "koraput-coffee.png",
   },
   {
     id: "brown-valley-honey-blend",
@@ -131,9 +313,11 @@ export const products: Product[] = [
     brewingNotes:
       "Versatile across espresso and filter. As espresso: water at 93°C, 25-second shot. As filter: V60 or Chemex at 93°C, medium grind for a smooth, satisfying cup.",
     availability: "in-stock",
-    weightOptions: ["250g", "500g", "1kg", "5kg"],
+    weightOptions: ["100g", "250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "300kg green beans",
+    pricePerKg: 3500,
+    image: "koraput-coffee.png",
   },
   {
     id: "panigrahi-washed-s795",
@@ -150,9 +334,11 @@ export const products: Product[] = [
     brewingNotes:
       "Ideal for pour-over or filter coffee. Medium-light roast recommended. Water at 92°C, medium grind. The balanced acidity and caramel sweetness make this an excellent all-day filter coffee.",
     availability: "in-stock",
-    weightOptions: ["250g", "500g", "1kg"],
+    weightOptions: ["100g", "250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "150kg green beans",
+    pricePerKg: 3800,
+    image: "koraput-coffee.png",
   },
   {
     id: "maa-mangala-honey-arabica",
@@ -169,8 +355,10 @@ export const products: Product[] = [
     brewingNotes:
       "Best as AeroPress or Chemex. Water at 92°C. The honey processing creates a thick, syrupy body. Experiment with finer grind settings to unlock the full tropical sweetness.",
     availability: "seasonal",
-    weightOptions: ["250g", "500g"],
+    weightOptions: ["100g", "250g"],
     exportAvailable: false,
+    pricePerKg: 5500,
+    image: "koraput-coffee.png",
   },
   {
     id: "odisha-export-grade-green-robusta",
@@ -180,16 +368,19 @@ export const products: Product[] = [
     region: "Koraput District",
     processing: "washed",
     variety: "Robusta",
-    roastLevel: "medium-dark",
+    roastLevel: "green",
     flavorNotes: ["Neutral", "Clean", "Full Body", "Consistent"],
     description:
       "A pooled export-grade green bean offering sourced from multiple Gray Cup partner estates in Koraput. Lot-tested, screen-sorted, and moisture-certified (10–12%). Supplied as raw green beans, ideal for import roasters, commodity buyers, and specialty coffee businesses seeking consistent Indian Robusta at scale.",
     brewingNotes:
       "For roasters: recommended development time 20–22% in medium roast profile. Excellent for espresso blends, instant coffee production, and value-specialty blending.",
     availability: "in-stock",
-    weightOptions: ["25kg", "60kg jute bag", "FCL container"],
+    weightOptions: ["1kg", "5kg", "25kg"],
     exportAvailable: true,
     minOrderExport: "1000kg green beans",
+    pricePerKg: 1200,
+    isGreen: true,
+    image: "koraput-green.png",
   },
   {
     id: "odisha-export-grade-green-arabica",
@@ -199,16 +390,19 @@ export const products: Product[] = [
     region: "Koraput District",
     processing: "washed",
     variety: "Arabica S795",
-    roastLevel: "light",
+    roastLevel: "green",
     flavorNotes: ["Clean", "Mild Acidity", "Chocolate", "Consistent"],
     description:
       "Traceable export-grade washed Arabica S795 sourced from verified Gray Cup partner farms across Koraput. Phytosanitary certified, ICO registered, and available with full lot documentation. Supplied as screened green beans (Screen 15+), ideal for specialty importers and roasters sourcing Indian-origin Arabica.",
     brewingNotes:
       "For roasters: well-suited to medium and medium-light roast profiles. The S795 variety develops excellent chocolate and mild-fruit character when roasted carefully to first crack +30 seconds.",
     availability: "in-stock",
-    weightOptions: ["25kg", "60kg jute bag", "FCL container"],
+    weightOptions: ["1kg", "5kg", "25kg"],
     exportAvailable: true,
     minOrderExport: "500kg green beans",
+    pricePerKg: 1800,
+    isGreen: true,
+    image: "koraput-green.png",
   },
 ];
 
@@ -217,6 +411,7 @@ export function getProductById(id: string): Product | undefined {
 }
 
 export const roastLabels: Record<RoastLevel, string> = {
+  green: "Green (Unroasted)",
   light: "Light Roast",
   medium: "Medium Roast",
   "medium-dark": "Medium-Dark Roast",

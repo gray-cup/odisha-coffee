@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { ShoppingCart } from "lucide-react";
+import { useCart } from "@/context/cart-context";
 
 const navLinks = [
   { label: "Farms", href: "/farms" },
@@ -12,6 +14,7 @@ const navLinks = [
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { count } = useCart();
 
   return (
     <>
@@ -60,6 +63,18 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-2">
+            <Link
+              href="/cart"
+              className="relative p-2 border-2 border-odisha-black hover:bg-odisha-red hover:border-odisha-red hover:text-white transition-colors"
+              aria-label="Cart"
+            >
+              <ShoppingCart className="h-5 w-5" />
+              {count > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 bg-odisha-red text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center border border-white">
+                  {count}
+                </span>
+              )}
+            </Link>
             <Link
               href="/contact"
               className="px-4 py-2 bg-odisha-red text-odisha-offwhite text-sm font-semibold border-2 border-odisha-black hover:bg-odisha-red-dark transition-colors"
@@ -119,7 +134,21 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col gap-3">
+            <Link
+              href="/cart"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-between w-full px-4 py-3 border-2 border-odisha-black text-odisha-black text-sm font-semibold hover:bg-odisha-black hover:text-white transition-colors"
+            >
+              <span className="flex items-center gap-2">
+                <ShoppingCart className="w-4 h-4" /> Cart
+              </span>
+              {count > 0 && (
+                <span className="bg-odisha-red text-white text-[9px] font-bold px-1.5 py-0.5">
+                  {count}
+                </span>
+              )}
+            </Link>
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
