@@ -79,7 +79,7 @@ export function Navbar() {
               href="/contact"
               className="px-4 py-2 bg-odisha-red text-odisha-offwhite text-sm font-semibold border-2 border-odisha-black hover:bg-odisha-red-dark transition-colors"
             >
-              Export Inquiry
+              Bulk Orders
             </Link>
           </div>
 
@@ -154,7 +154,7 @@ export function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="block w-full text-center px-4 py-3 bg-odisha-red text-odisha-offwhite text-sm font-semibold border-2 border-odisha-black hover:bg-odisha-red-dark transition-colors"
             >
-              Export Inquiry
+              Bulk Orders
             </Link>
           </div>
         </aside>

@@ -28,7 +28,7 @@ export default function Footer() {
             href="/contact"
             className="inline-flex items-center gap-2 px-4 py-2 bg-white text-odisha-black text-sm font-semibold border-2 border-white hover:bg-odisha-yellow hover:border-odisha-yellow transition-colors whitespace-nowrap"
           >
-            Export Inquiry
+            Bulk Orders
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
