@@ -11,6 +11,7 @@ const quickLinks = [
 const infoLinks = [
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms of Use" },
+  { href: "/refunds", label: "Refunds & Cancellations" },
   { href: "/shipping", label: "Shipping Policy" },
   { href: "/sitemap.xml", label: "Sitemap" },
 ];
