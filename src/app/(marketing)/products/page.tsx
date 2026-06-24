@@ -11,12 +11,102 @@ export const metadata: Metadata = {
     "Odisha coffee wholesale and export — washed, natural, and honey processed Arabica & Robusta from verified Koraput farms. Export-grade green beans, specialty lots, and bulk supply available.",
 };
 
+const BASE_URL = "https://odishacoffee.com";
+const PRICE_VALID_UNTIL = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
+  .toISOString()
+  .split("T")[0];
+
+function schemaAvailability(a: string): string {
+  if (a === "in-stock") return "https://schema.org/InStock";
+  if (a === "limited") return "https://schema.org/LimitedAvailability";
+  return "https://schema.org/OutOfStock";
+}
+
+function buildProductSchema(product: (typeof products)[number]) {
+  const imageUrl = product.image
+    ? `${BASE_URL}/products/${product.image}`
+    : `${BASE_URL}/og.png`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${BASE_URL}/products#${product.id}`,
+    name: product.name,
+    description: product.description,
+    image: imageUrl,
+    url: `${BASE_URL}/products`,
+    sku: `OC-${product.id.toUpperCase()}`,
+    brand: { "@type": "Brand", name: "Odisha Coffee" },
+    category: "Food, Beverages & Tobacco > Food Items > Beverages > Coffee",
+    countryOfOrigin: { "@type": "Country", name: "India" },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "INR",
+      price: product.pricePerKg.toFixed(2),
+      unitText: "per kg",
+      availability: schemaAvailability(product.availability),
+      url: `${BASE_URL}/products`,
+      seller: {
+        "@type": "Organization",
+        "@id": `${BASE_URL}/#organization`,
+        name: "Odisha Coffee",
+      },
+      priceValidUntil: PRICE_VALID_UNTIL,
+      itemCondition: "https://schema.org/NewCondition",
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "0",
+          currency: "INR",
+        },
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "IN",
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: 0,
+            maxValue: 1,
+            unitCode: "DAY",
+          },
+          transitTime: {
+            "@type": "QuantitativeValue",
+            minValue: 2,
+            maxValue: 7,
+            unitCode: "DAY",
+          },
+        },
+      },
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "IN",
+        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 7,
+        returnMethod: "https://schema.org/ReturnByMail",
+        returnFees: "https://schema.org/FreeReturn",
+      },
+    },
+  };
+}
+
 export default function ProductsPage() {
+  const productSchemas = products.map(buildProductSchema);
   const roastedProducts = products.filter((p) => !p.isGreen && p.roastLevel !== "green");
   const greenProducts   = products.filter((p) => p.isGreen || p.roastLevel === "green");
   const specialtyLots   = products.filter((p) => !p.exportAvailable || p.availability !== "in-stock");
 
   return (
+    <>
+      {productSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
     <div>
       {/* Header */}
       <section className="bg-odisha-red pattachitra-pattern-red border-b-2 border-odisha-black">
@@ -297,5 +387,6 @@ export default function ProductsPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }
