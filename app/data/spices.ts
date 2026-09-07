@@ -9,7 +9,6 @@ export type Spice = {
 };
 
 const SPICE_WEIGHT_OPTIONS: Spice["weightOptions"] = [
-  { label: "100g", grams: 100 },
   { label: "250g", grams: 250 },
   { label: "500g", grams: 500 },
   { label: "1kg",  grams: 1000 },

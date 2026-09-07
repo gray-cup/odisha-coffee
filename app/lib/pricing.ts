@@ -9,7 +9,6 @@ import { farms, getFarmBySlug, type Farm } from "@/data/farms";
 // from `items` using this module before creating a Cashfree payment link.
 
 export const ROASTED_TIERS = [
-  { label: "100g", grams: 100 },
   { label: "250g", grams: 250 },
   { label: "500g", grams: 500 },
   { label: "1kg",  grams: 1000 },
@@ -115,15 +114,15 @@ export function tiersFor(resolved: ResolvedCartItem): Array<{ label: string; gra
 /**
  * Bulk discount schedule for estate (green bean) lots: the more you buy, the
  * lower the effective ₹/kg rate, up to MAX_BULK_DISCOUNT. Small retail packs
- * (100g/500g) actually carry a premium (negative discount) over the base
- * per-kg rate, packing and handling a 100g bag costs more per kg than a
+ * (250g/500g) actually carry a premium (negative discount) over the base
+ * per-kg rate, packing and handling a 250g bag costs more per kg than a
  * 20kg sack, and the bulk discount itself is capped modestly rather than
  * stacking up to a steep markdown at the top end.
  */
 export const MAX_BULK_DISCOUNT = 0.08;
 
 export const BULK_DISCOUNT_TIERS: Array<{ grams: number; discount: number }> = [
-  { grams: 100,   discount: -0.12 },
+  { grams: 250,   discount: -0.12 },
   { grams: 500,   discount: -0.05 },
   { grams: 1000,  discount: 0 },
   { grams: 2000,  discount: 0.02 },

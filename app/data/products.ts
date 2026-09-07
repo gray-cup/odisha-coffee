@@ -97,7 +97,7 @@ export const products: Product[] = [
     brewingNotes:
       "Ideal for pour-over, V60, or Chemex. Water at 90–92°C, 1:16 ratio. Grind medium-fine. The light roast rewards slow extraction, allow full 3–4 minute brew time.",
     availability: "in-stock",
-    weightOptions: ["100g", "250g", "500g", "1kg"],
+    weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: false,
     pricePerKg: 1372,
     image: "koraput-coffee.webp",
@@ -117,7 +117,7 @@ export const products: Product[] = [
     brewingNotes:
       "Excellent as filter or espresso. Pour-over at 93°C, 1:15 ratio. As espresso: 25–28 second extraction. The natural sweetness pairs brilliantly with milk-based drinks.",
     availability: "in-stock",
-    weightOptions: ["100g", "250g", "500g", "1kg"],
+    weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: false,
     pricePerKg: 1568,
     image: "koraput-coffee.webp",
@@ -137,7 +137,7 @@ export const products: Product[] = [
     brewingNotes:
       "Best as pour-over or AeroPress at 88–90°C (lower temp amplifies the strawberry). 1:15 ratio, medium grind. Try as a cold brew for a stunning no-heat-needed strawberry sweetness.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g", "1kg"],
+    weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: false,
     pricePerKg: 2058,
     image: "koraput-coffee.webp",
@@ -157,7 +157,7 @@ export const products: Product[] = [
     brewingNotes:
       "Moka pot or espresso for the full barrel intensity. French press at 94°C, 4-minute steep, the oils and body come through beautifully. Pairs exceptionally with a drop of cream.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g"],
+    weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 2548,
     image: "koraput-coffee.webp",
@@ -177,7 +177,7 @@ export const products: Product[] = [
     brewingNotes:
       "Dial to 9 bars, 93°C, 25–28 seconds, 1:2 ratio. For milk drinks, pull slightly longer (30s) for extra sweetness. Forgiving on dose, ±2g from recipe still yields a good shot.",
     availability: "in-stock",
-    weightOptions: ["100g", "250g", "500g", "1kg"],
+    weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: false,
     pricePerKg: 1176,
     image: "koraput-coffee.webp",
@@ -197,7 +197,7 @@ export const products: Product[] = [
     brewingNotes:
       "Best at 93°C, 9 bars, 27–30 seconds, 1:2.2 ratio. The all-Arabica character shines brightest as a straight espresso or flat white. Avoid over-extraction, the sweetness lives in the first half of the shot.",
     availability: "in-stock",
-    weightOptions: ["100g", "250g", "500g", "1kg"],
+    weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: false,
     pricePerKg: 1470,
     image: "koraput-coffee.webp",
@@ -220,7 +220,7 @@ export const products: Product[] = [
     brewingNotes:
       "Best as pour-over or V60. Use water at 90–92°C. Ratio 1:16. Allow 3–4 minutes total brew time. The light roast expresses the citrus and floral character most fully.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g"],
+    weightOptions: ["250g", "500g"],
     exportAvailable: true,
     minOrderExport: "50kg green beans",
     pricePerKg: 2205,
@@ -241,7 +241,7 @@ export const products: Product[] = [
     brewingNotes:
       "Excellent as Chemex or AeroPress. Water at 93°C. The honey process creates a syrupy body that shines with longer extraction. Try also as a cold brew for a deeply sweet, low-acidity experience.",
     availability: "seasonal",
-    weightOptions: ["100g", "250g", "500g", "1kg"],
+    weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "100kg green beans",
     pricePerKg: 2450,
@@ -262,7 +262,7 @@ export const products: Product[] = [
     brewingNotes:
       "Pour-over or Kalita Wave. Grind medium-fine. Water at 91°C. The delicate floral notes reward lower water temperature and careful extraction control.",
     availability: "in-stock",
-    weightOptions: ["100g", "250g", "500g", "1kg"],
+    weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "100kg green beans",
     pricePerKg: 1862,
@@ -283,7 +283,7 @@ export const products: Product[] = [
     brewingNotes:
       "Excellent across multiple brew methods. Particularly beautiful as a cold brew or AeroPress. The organic character and clean terroir translate well to any extraction style.",
     availability: "in-stock",
-    weightOptions: ["100g", "250g", "500g", "1kg"],
+    weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "200kg green beans",
     pricePerKg: 1960,
@@ -304,7 +304,7 @@ export const products: Product[] = [
     brewingNotes:
       "Versatile across espresso and filter. As espresso: water at 93°C, 25-second shot. As filter: V60 or Chemex at 93°C, medium grind for a smooth, satisfying cup.",
     availability: "in-stock",
-    weightOptions: ["100g", "250g", "500g", "1kg"],
+    weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "300kg green beans",
     pricePerKg: 1715,
@@ -325,7 +325,7 @@ export const products: Product[] = [
     brewingNotes:
       "Ideal for pour-over or filter coffee. Medium-light roast recommended. Water at 92°C, medium grind. The balanced acidity and caramel sweetness make this an excellent all-day filter coffee.",
     availability: "in-stock",
-    weightOptions: ["100g", "250g", "500g", "1kg"],
+    weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "150kg green beans",
     pricePerKg: 1862,
@@ -346,7 +346,7 @@ export const products: Product[] = [
     brewingNotes:
       "Best as AeroPress or Chemex. Water at 92°C. The honey processing creates a thick, syrupy body. Experiment with finer grind settings to unlock the full tropical sweetness.",
     availability: "seasonal",
-    weightOptions: ["100g", "250g"],
+    weightOptions: ["250g"],
     exportAvailable: false,
     pricePerKg: 2695,
     image: "koraput-coffee.webp",
@@ -392,7 +392,7 @@ export const products: Product[] = [
     brewingNotes:
       "Pour-over or French press at 92–94°C, medium grind, 1:15 ratio. The chocolate and creamy, dairy-like sweetness need room, avoid over-extraction. Excellent as a slow cold brew.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g"],
+    weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 4800,
     image: "civet-cat/kopi-luwak-brown-valley.webp",
@@ -412,7 +412,7 @@ export const products: Product[] = [
     brewingNotes:
       "Pour-over, V60 or Chemex at 92–93°C, medium-fine grind, 1:16 ratio. Full 3–4 minute brew time rewards the floral aromatics and citrus clarity. Also excellent as a bright, clean cold brew.",
     availability: "in-stock",
-    weightOptions: ["100g", "250g", "500g", "1kg"],
+    weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "100kg green beans",
     pricePerKg: 2600,
@@ -433,7 +433,7 @@ export const products: Product[] = [
     brewingNotes:
       "Versatile across filter and espresso. Filter: V60 or Chemex at 93°C, medium grind. Espresso: 93°C, 25–28 second shot. The honey process gives a syrupy body that holds up well with milk.",
     availability: "in-stock",
-    weightOptions: ["100g", "250g", "500g", "1kg"],
+    weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: true,
     minOrderExport: "100kg green beans",
     pricePerKg: 2600,
@@ -459,7 +459,7 @@ export const products: Product[] = [
     brewingNotes:
       "Best as espresso or moka pot for full barrel intensity. French press at 94°C, 4-minute steep. A drop of cream rounds the spirit warmth.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g"],
+    weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 2695,
     image: "koraput-coffee.webp",
@@ -479,7 +479,7 @@ export const products: Product[] = [
     brewingNotes:
       "Filter (V60 or Chemex) at 93°C, medium grind, to keep it clean; espresso at 93°C, 26–28 seconds for a richer, maltier shot.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g"],
+    weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 2645,
     image: "koraput-coffee.webp",
@@ -499,7 +499,7 @@ export const products: Product[] = [
     brewingNotes:
       "Pour-over or AeroPress at 88–90°C amplifies the strawberry. 1:15 ratio, medium grind. Outstanding as cold brew.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g"],
+    weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 2895,
     image: "koraput-coffee.webp",
@@ -519,7 +519,7 @@ export const products: Product[] = [
     brewingNotes:
       "Espresso at 93°C, 25–28 seconds, or French press at 94°C. Holds up well with milk for a rum-tinged cortado.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g"],
+    weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 2545,
     image: "koraput-coffee.webp",
@@ -539,7 +539,7 @@ export const products: Product[] = [
     brewingNotes:
       "Espresso or moka pot for maximum chocolate intensity. As filter, brew slightly stronger (1:14) at 94°C.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g"],
+    weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 2745,
     image: "koraput-coffee.webp",
@@ -559,7 +559,7 @@ export const products: Product[] = [
     brewingNotes:
       "Pour-over at 92–93°C, medium-fine grind, 1:16 ratio. The vanilla reads sweetest black; also lovely as a flat white.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g"],
+    weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 2625,
     image: "koraput-coffee.webp",
@@ -579,7 +579,7 @@ export const products: Product[] = [
     brewingNotes:
       "French press or moka pot at 94°C for the fullest body. As espresso, a 1:2 ratio keeps the cherry bright without turning sour.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g"],
+    weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 2695,
     image: "koraput-coffee.webp",
@@ -599,7 +599,7 @@ export const products: Product[] = [
     brewingNotes:
       "Pour-over at 92°C keeps the orange zesty; espresso at 93°C, 27 seconds brings out the rum and cocoa. Excellent cold brew.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g"],
+    weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 2625,
     image: "koraput-coffee.webp",
@@ -619,7 +619,7 @@ export const products: Product[] = [
     brewingNotes:
       "Pour-over or AeroPress at 88–90°C, 1:15 ratio, medium grind. Cold brew for a naturally sweet, fruit-forward cup with no additives.",
     availability: "limited",
-    weightOptions: ["100g", "250g", "500g"],
+    weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 2895,
     image: "koraput-coffee.webp",

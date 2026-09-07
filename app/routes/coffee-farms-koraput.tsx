@@ -279,7 +279,7 @@ export default function CoffeeFarmsKoraputPage() {
             <p>
               <strong className="text-odisha-black">How to buy Koraput coffee?</strong>{" "}
               Gray Cup Enterprises offers Koraput coffee in multiple forms: retail roasted bags
-              (100g–1kg) through this website, wholesale green beans (minimum 50kg per lot),
+              (250g–1kg) through this website, wholesale green beans (minimum 50kg per lot),
               and export-grade containers (FCL and LCL). Contact us with your volume requirements
               and we will provide current lot availability, cupping reports, and pricing.
             </p>

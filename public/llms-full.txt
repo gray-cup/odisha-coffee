@@ -480,7 +480,7 @@ Brewing/roasting notes: Roasters: medium to medium-dark roast profiles work best
 - Roast level: light
 - Flavor notes: Citrus Blossom, Peach, Honey, Clean Finish
 - Availability: in-stock
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 - Price: ₹1372/kg
 - Export available: No
 
@@ -496,7 +496,7 @@ Brewing/roasting notes: Ideal for pour-over, V60, or Chemex. Water at 90–92°C
 - Roast level: medium
 - Flavor notes: Dark Cherry, Dark Chocolate, Dried Fruit, Syrupy Body
 - Availability: in-stock
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 - Price: ₹1568/kg
 - Export available: No
 
@@ -512,7 +512,7 @@ Brewing/roasting notes: Excellent as filter or espresso. Pour-over at 93°C, 1:1
 - Roast level: light
 - Flavor notes: Fresh Strawberry, Rose Hip, Hibiscus, Tropical Sweetness
 - Availability: limited
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 - Price: ₹2058/kg
 - Export available: No
 
@@ -528,7 +528,7 @@ Brewing/roasting notes: Best as pour-over or AeroPress at 88–90°C (lower temp
 - Roast level: medium-dark
 - Flavor notes: Toasted Oak, Molasses, Vanilla, Dark Fruit, Spirit Warmth
 - Availability: limited
-- Weight options: 100g, 250g, 500g
+- Weight options: 250g, 500g
 - Price: ₹2548/kg
 - Export available: No
 
@@ -544,7 +544,7 @@ Brewing/roasting notes: Moka pot or espresso for the full barrel intensity. Fren
 - Roast level: medium-dark
 - Flavor notes: Dark Chocolate, Caramel, Hazelnut, Thick Crema, Low Acidity
 - Availability: in-stock
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 - Price: ₹1176/kg
 - Export available: No
 
@@ -560,7 +560,7 @@ Brewing/roasting notes: Dial to 9 bars, 93°C, 25–28 seconds, 1:2 ratio. For m
 - Roast level: medium
 - Flavor notes: Milk Chocolate, Brown Sugar, Almond, Smooth Finish
 - Availability: in-stock
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 - Price: ₹1470/kg
 - Export available: No
 
@@ -576,7 +576,7 @@ Brewing/roasting notes: Best at 93°C, 9 bars, 27–30 seconds, 1:2.2 ratio. The
 - Roast level: light
 - Flavor notes: Bergamot, Peach Tea, Honey Crisp, Bright Acidity
 - Availability: limited
-- Weight options: 100g, 250g, 500g
+- Weight options: 250g, 500g
 - Price: ₹2205/kg
 - Export available: Yes (min 50kg green beans)
 
@@ -592,7 +592,7 @@ Brewing/roasting notes: Best as pour-over or V60. Use water at 90–92°C. Ratio
 - Roast level: medium
 - Flavor notes: Honey-like, Golden Raisin, Orange Blossom, Caramel Finish
 - Availability: seasonal
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 - Price: ₹2450/kg
 - Export available: Yes (min 100kg green beans)
 
@@ -608,7 +608,7 @@ Brewing/roasting notes: Excellent as Chemex or AeroPress. Water at 93°C. The ho
 - Roast level: light
 - Flavor notes: Floral, Peach, Light Caramel, Delicate
 - Availability: in-stock
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 - Price: ₹1862/kg
 - Export available: Yes (min 100kg green beans)
 
@@ -624,7 +624,7 @@ Brewing/roasting notes: Pour-over or Kalita Wave. Grind medium-fine. Water at 91
 - Roast level: medium
 - Flavor notes: Green Apple, Floral, Clean Sweetness, Bright
 - Availability: in-stock
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 - Price: ₹1960/kg
 - Export available: Yes (min 200kg green beans)
 
@@ -640,7 +640,7 @@ Brewing/roasting notes: Excellent across multiple brew methods. Particularly bea
 - Roast level: medium
 - Flavor notes: Milk Chocolate, Hazelnut, Stone Fruit, Smooth
 - Availability: in-stock
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 - Price: ₹1715/kg
 - Export available: Yes (min 300kg green beans)
 
@@ -656,7 +656,7 @@ Brewing/roasting notes: Versatile across espresso and filter. As espresso: water
 - Roast level: medium
 - Flavor notes: Dark Cherry, Walnut, Caramel, Balanced
 - Availability: in-stock
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 - Price: ₹1862/kg
 - Export available: Yes (min 150kg green beans)
 
@@ -672,7 +672,7 @@ Brewing/roasting notes: Ideal for pour-over or filter coffee. Medium-light roast
 - Roast level: medium
 - Flavor notes: Mango, Honey, Soft Spice, Tropical Sweetness
 - Availability: seasonal
-- Weight options: 100g, 250g
+- Weight options: 250g
 - Price: ₹2695/kg
 - Export available: No
 
@@ -704,7 +704,7 @@ Brewing/roasting notes: For roasters: well-suited to medium and medium-light roa
 - Roast level: medium
 - Flavor notes: Chocolate, Earthy, Creamy, Low Bitterness
 - Availability: limited
-- Weight options: 100g, 250g, 500g
+- Weight options: 250g, 500g
 - Price: ₹4800/kg
 - Export available: No
 
@@ -720,7 +720,7 @@ Brewing/roasting notes: Pour-over or French press at 92–94°C, medium grind, 1
 - Roast level: medium
 - Flavor notes: Honey-like, Citrus Zest, Golden Raisin, Clean Finish
 - Availability: in-stock
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 - Price: ₹2600/kg
 - Export available: Yes (min 100kg green beans)
 
@@ -736,7 +736,7 @@ Brewing/roasting notes: Pour-over, V60 or Chemex at 92–93°C, medium-fine grin
 - Roast level: medium
 - Flavor notes: Milk Chocolate, Stone Fruit, Honey, Smooth Body
 - Availability: in-stock
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 - Price: ₹2600/kg
 - Export available: Yes (min 100kg green beans)
 
@@ -752,7 +752,7 @@ Brewing/roasting notes: Versatile across filter and espresso. Filter: V60 or Che
 - Roast level: medium-dark
 - Flavor notes: Molasses, Toasted Oak, Raisin, Dark Rum, Spirit Warmth
 - Availability: limited
-- Weight options: 100g, 250g, 500g
+- Weight options: 250g, 500g
 - Price: ₹2695/kg
 - Export available: No
 
@@ -768,7 +768,7 @@ Brewing/roasting notes: Best as espresso or moka pot for full barrel intensity. 
 - Roast level: medium
 - Flavor notes: Honey, Barley, Vanilla Oak, Stone Fruit, Smooth Malt
 - Availability: limited
-- Weight options: 100g, 250g, 500g
+- Weight options: 250g, 500g
 - Price: ₹2645/kg
 - Export available: No
 
@@ -784,7 +784,7 @@ Brewing/roasting notes: Filter (V60 or Chemex) at 93°C, medium grind, to keep i
 - Roast level: light
 - Flavor notes: Fresh Strawberry, Whiskey Oak, Rose, Candied Fruit, Syrupy
 - Availability: limited
-- Weight options: 100g, 250g, 500g
+- Weight options: 250g, 500g
 - Price: ₹2895/kg
 - Export available: No
 
@@ -800,7 +800,7 @@ Brewing/roasting notes: Pour-over or AeroPress at 88–90°C amplifies the straw
 - Roast level: medium-dark
 - Flavor notes: Dark Rum, Brown Sugar, Cocoa, Dried Fig, Warm Spice
 - Availability: limited
-- Weight options: 100g, 250g, 500g
+- Weight options: 250g, 500g
 - Price: ₹2545/kg
 - Export available: No
 
@@ -816,7 +816,7 @@ Brewing/roasting notes: Espresso at 93°C, 25–28 seconds, or French press at 9
 - Roast level: medium-dark
 - Flavor notes: Dark Chocolate, Cacao Nib, Rum, Toasted Hazelnut, Syrupy
 - Availability: limited
-- Weight options: 100g, 250g, 500g
+- Weight options: 250g, 500g
 - Price: ₹2745/kg
 - Export available: No
 
@@ -832,7 +832,7 @@ Brewing/roasting notes: Espresso or moka pot for maximum chocolate intensity. As
 - Roast level: medium
 - Flavor notes: Bourbon Vanilla, Whiskey Oak, Caramel, Clean Citrus, Silky
 - Availability: limited
-- Weight options: 100g, 250g, 500g
+- Weight options: 250g, 500g
 - Price: ₹2625/kg
 - Export available: No
 
@@ -848,7 +848,7 @@ Brewing/roasting notes: Pour-over at 92–93°C, medium-fine grind, 1:16 ratio. 
 - Roast level: medium
 - Flavor notes: Black Cherry, Whiskey, Almond, Dark Chocolate, Jammy
 - Availability: limited
-- Weight options: 100g, 250g, 500g
+- Weight options: 250g, 500g
 - Price: ₹2695/kg
 - Export available: No
 
@@ -864,7 +864,7 @@ Brewing/roasting notes: French press or moka pot at 94°C for the fullest body. 
 - Roast level: medium
 - Flavor notes: Candied Orange, Rum, Cocoa, Marmalade, Warm Spice
 - Availability: limited
-- Weight options: 100g, 250g, 500g
+- Weight options: 250g, 500g
 - Price: ₹2625/kg
 - Export available: No
 
@@ -880,7 +880,7 @@ Brewing/roasting notes: Pour-over at 92°C keeps the orange zesty; espresso at 9
 - Roast level: light
 - Flavor notes: Strawberry, Cacao Nib, Hibiscus, Red Berry, Tropical Sweetness
 - Availability: limited
-- Weight options: 100g, 250g, 500g
+- Weight options: 250g, 500g
 - Price: ₹2895/kg
 - Export available: No
 
@@ -1155,7 +1155,7 @@ Brewing notes: Recommended roast: medium, gentle development to keep the anaerob
 - Screen size: Hand-Sorted
 - Flavor notes: Chocolate, Earthy, Creamy, Low Bitterness
 - Availability: limited
-- Min order: 100 g
+- Min order: 250 g
 - Price: ₹1940/kg (+₹60/kg shipping)
 
 A genuine rarity from Brown Valley, Koraput, Odisha, India, wild civet cat coffee, exclusively foraged at Brown Valley Coffee Estate. Also known as Kopi Luwak, it's made by passing coffee cherries through the digestive tract of the wild Asian palm civet, where they undergo natural fermentation and enzymatic changes before being hand-collected from the animal's droppings, thoroughly cleaned, and sun-dried. It's washed, a smooth, low-bitter cup with rich chocolate, earthy, and creamy dairy-like notes. Wild-foraged (never caged), seasonal, and available only in small quantities.
@@ -1167,13 +1167,13 @@ Brewing notes: Recommended roast: medium, kept gentle to preserve the smooth, lo
 ### Black Pepper
 
 - Price: ₹850/kg
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 
 Shade-grown black pepper from Brown Valley Coffee Estate in Koraput, Odisha, pepper vines are traditionally intercropped with silver oak and jackfruit shade trees across the estate. Sun-dried, hand-sorted, and sold by the kilogram.
 
 ### White Pepper
 
 - Price: ₹1400/kg
-- Weight options: 100g, 250g, 500g, 1kg
+- Weight options: 250g, 500g, 1kg
 
 Shade-grown white pepper from Brown Valley Coffee Estate in Koraput, Odisha, ripe berries are soaked and hulled to remove the outer skin, yielding a milder, cleaner heat than black pepper. Sun-dried, hand-sorted, and sold by the kilogram.

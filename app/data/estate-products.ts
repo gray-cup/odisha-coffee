@@ -30,7 +30,7 @@ export type EstateProduct = {
 };
 
 const WEIGHT_OPTIONS: EstateProduct["weightOptions"] = [
-  { label: "100 g", grams: 100   },
+  { label: "250 g", grams: 250   },
   { label: "500 g", grams: 500   },
   { label: "1 kg",  grams: 1000  },
   { label: "2 kg",  grams: 2000  },
@@ -396,7 +396,7 @@ export const estateProducts: EstateProduct[] = [
     flavorNotes: ["Chocolate", "Earthy", "Creamy", "Low Bitterness"],
     availability: "limited",
     weightOptions: WEIGHT_OPTIONS,
-    minOrder: "100 g",
+    minOrder: "250 g",
     grade: "Wild Kopi Luwak, Hand-Collected",
     moisture: "10–12%",
     screenSize: "Hand-Sorted",
@@ -404,7 +404,7 @@ export const estateProducts: EstateProduct[] = [
       "Recommended roast: medium, kept gentle to preserve the smooth, low-bitter cup the washed processing produces. Best brewed as pour-over or French press, where the chocolate and creamy dairy-like sweetness have room to come through.",
     exclusiveFarmId: "brown-valley-coffee-estate",
     customPricing: {
-      100: 2200,
+      250: 2200,
       500: 2075,
       1000: 2000,
       2000: 1980,
