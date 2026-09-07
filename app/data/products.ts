@@ -235,7 +235,7 @@ export const products: Product[] = [
     processing: "honey",
     variety: "Chandragiri",
     roastLevel: "medium",
-    flavorNotes: ["Jasmine", "Golden Raisin", "Orange Blossom", "Caramel Finish"],
+    flavorNotes: ["Honey-like", "Golden Raisin", "Orange Blossom", "Caramel Finish"],
     description:
       "Honey-processed Catuai from the Saptagiri Plantation's highest blocks. The 72-hour mucilage drying on raised beds in Koraput's dry-season sun concentrates natural fruit sugars, delivering a sweet, complex cup that balances floral aromatics with honeyed texture.",
     brewingNotes:
@@ -406,7 +406,7 @@ export const products: Product[] = [
     processing: "washed",
     variety: "Arabica SLN 9 & Chandragiri",
     roastLevel: "medium",
-    flavorNotes: ["Jasmine", "Citrus Zest", "Golden Raisin", "Clean Finish"],
+    flavorNotes: ["Honey-like", "Citrus Zest", "Golden Raisin", "Clean Finish"],
     description:
       "AAA-grade (screen 17+) washed Arabica from Dream Hill, positioned at the highest elevations in Odisha's coffee belt at over 1100m. Clean fermentation and extended raised-bed drying, roasted medium to balance the estate's bright acidity with a rounded, sweet body. The benchmark washed lot from Odisha's most refined high-altitude estate.",
     brewingNotes:

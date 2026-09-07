@@ -590,7 +590,7 @@ Brewing/roasting notes: Best as pour-over or V60. Use water at 90–92°C. Ratio
 - Variety: Chandragiri
 - Processing: honey
 - Roast level: medium
-- Flavor notes: Jasmine, Golden Raisin, Orange Blossom, Caramel Finish
+- Flavor notes: Honey-like, Golden Raisin, Orange Blossom, Caramel Finish
 - Availability: seasonal
 - Weight options: 100g, 250g, 500g, 1kg
 - Price: ₹2450/kg
@@ -718,7 +718,7 @@ Brewing/roasting notes: Pour-over or French press at 92–94°C, medium grind, 1
 - Variety: Arabica SLN 9 & Chandragiri
 - Processing: washed
 - Roast level: medium
-- Flavor notes: Jasmine, Citrus Zest, Golden Raisin, Clean Finish
+- Flavor notes: Honey-like, Citrus Zest, Golden Raisin, Clean Finish
 - Availability: in-stock
 - Weight options: 100g, 250g, 500g, 1kg
 - Price: ₹2600/kg
