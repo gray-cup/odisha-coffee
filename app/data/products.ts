@@ -276,7 +276,7 @@ export const products: Product[] = [
     region: "Semiliguda, Koraput",
     processing: "natural",
     variety: "Arabica S795",
-    roastLevel: "medium",
+    roastLevel: "medium-dark",
     flavorNotes: ["Green Apple", "Floral", "Clean Sweetness", "Bright"],
     description:
       "Certified organic Arabica S795 from Koraput Organic estate, grown without synthetic inputs under natural forest canopy. The natural processing brings out the variety's inherent sweetness while maintaining the clean, transparent character of the estate's high-altitude terroir.",

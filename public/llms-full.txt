@@ -621,7 +621,7 @@ Brewing/roasting notes: Pour-over or Kalita Wave. Grind medium-fine. Water at 91
 - Farm: Koraput Organic (Semiliguda, Koraput)
 - Variety: Arabica S795
 - Processing: natural
-- Roast level: medium
+- Roast level: medium-dark
 - Flavor notes: Green Apple, Floral, Clean Sweetness, Bright
 - Availability: in-stock
 - Weight options: 250g, 500g, 1kg
