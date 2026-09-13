@@ -504,22 +504,6 @@ Natural-processed Koraput coffee roasted to medium, where the fruit-integration 
 
 Brewing/roasting notes: Excellent as filter or espresso. Pour-over at 93°C, 1:15 ratio. As espresso: 25–28 second extraction. The natural sweetness pairs brilliantly with milk-based drinks.
 
-### Strawberry Roasted
-
-- Farm: Oak Winds Farm × Gray Cup Roastery (Pottangi, Koraput)
-- Variety: Arabica SLN 9
-- Processing: natural
-- Roast level: light
-- Flavor notes: Fresh Strawberry, Rose Hip, Hibiscus, Tropical Sweetness
-- Availability: limited
-- Weight options: 250g, 500g, 1kg
-- Price: ₹2058/kg
-- Export available: No
-
-A rare anaerobic natural lot from Oak Winds Farm, processed with extended cherry fermentation that produces vivid strawberry and floral notes. Roasted light to let the process-driven character sing. Each batch is limited, when it's gone, it's gone until next season.
-
-Brewing/roasting notes: Best as pour-over or AeroPress at 88–90°C (lower temp amplifies the strawberry). 1:15 ratio, medium grind. Try as a cold brew for a stunning no-heat-needed strawberry sweetness.
-
 ### Whiskey Rum Roasted
 
 - Farm: Dream Hill Coffee × Gray Cup Roastery (Pottangi, Koraput)
@@ -776,22 +760,6 @@ HSD honey lot from Brown Valley rested in Teacher's blended-Scotch barrels. The 
 
 Brewing/roasting notes: Filter (V60 or Chemex) at 93°C, medium grind, to keep it clean; espresso at 93°C, 26–28 seconds for a richer, maltier shot.
 
-### Strawberry Whiskey × Anaerobic Natural
-
-- Farm: Oak Winds Farm × Gray Cup Roastery (Pottangi, Koraput)
-- Variety: Arabica SLN 9
-- Processing: natural
-- Roast level: light
-- Flavor notes: Fresh Strawberry, Whiskey Oak, Rose, Candied Fruit, Syrupy
-- Availability: limited
-- Weight options: 250g, 500g
-- Price: ₹2895/kg
-- Export available: No
-
-Anaerobic-natural SLN 9 from Oak Winds, co-conditioned with strawberry and rested in whiskey oak. Sealed-tank fermentation drives vivid strawberry and floral notes; the barrel adds a soft oak frame. Roasted light to keep the fruit forward.
-
-Brewing/roasting notes: Pour-over or AeroPress at 88–90°C amplifies the strawberry. 1:15 ratio, medium grind. Outstanding as cold brew.
-
 ### Rum × Natural
 
 - Farm: Koraput Organic × Gray Cup Roastery (Semiliguda, Koraput)
@@ -807,22 +775,6 @@ Brewing/roasting notes: Pour-over or AeroPress at 88–90°C amplifies the straw
 Certified-organic S795 natural rested in dark-rum barrels. The clean organic terroir keeps it from turning heavy; expect brown sugar, cocoa and a mellow rum warmth. The most approachable of the barrel series.
 
 Brewing/roasting notes: Espresso at 93°C, 25–28 seconds, or French press at 94°C. Holds up well with milk for a rum-tinged cortado.
-
-### Cacao Rum × HSD
-
-- Farm: Brown Valley Coffee Estate × Gray Cup Roastery (Boipariguda, Koraput)
-- Variety: Arabica HSD (Hibrido de Timor)
-- Processing: honey
-- Roast level: medium-dark
-- Flavor notes: Dark Chocolate, Cacao Nib, Rum, Toasted Hazelnut, Syrupy
-- Availability: limited
-- Weight options: 250g, 500g
-- Price: ₹2745/kg
-- Export available: No
-
-HSD honey lot co-fermented with cacao husk and finished in rum barrels. Deep dark-chocolate and cacao-nib notes over the HSD's rounded sweetness, with a rum-soaked edge. A dessert in a cup.
-
-Brewing/roasting notes: Espresso or moka pot for maximum chocolate intensity. As filter, brew slightly stronger (1:14) at 94°C.
 
 ### Vanilla Whiskey × Washed
 
@@ -872,6 +824,54 @@ S795 natural co-fermented with orange peel and finished in rum barrels. Bright c
 
 Brewing/roasting notes: Pour-over at 92°C keeps the orange zesty; espresso at 93°C, 27 seconds brings out the rum and cocoa. Excellent cold brew.
 
+### Strawberry Roasted
+
+- Farm: Oak Winds Farm × Gray Cup Roastery (Pottangi, Koraput)
+- Variety: Arabica SLN 9
+- Processing: natural
+- Roast level: light
+- Flavor notes: Fresh Strawberry, Rose Hip, Hibiscus, Tropical Sweetness
+- Availability: out-of-stock
+- Weight options: 250g, 500g, 1kg
+- Price: ₹2058/kg
+- Export available: No
+
+A rare anaerobic natural lot from Oak Winds Farm, processed with extended cherry fermentation that produces vivid strawberry and floral notes. Roasted light to let the process-driven character sing. Each batch is limited, when it's gone, it's gone until next season.
+
+Brewing/roasting notes: Best as pour-over or AeroPress at 88–90°C (lower temp amplifies the strawberry). 1:15 ratio, medium grind. Try as a cold brew for a stunning no-heat-needed strawberry sweetness.
+
+### Strawberry Whiskey × Anaerobic Natural
+
+- Farm: Oak Winds Farm × Gray Cup Roastery (Pottangi, Koraput)
+- Variety: Arabica SLN 9
+- Processing: natural
+- Roast level: light
+- Flavor notes: Fresh Strawberry, Whiskey Oak, Rose, Candied Fruit, Syrupy
+- Availability: out-of-stock
+- Weight options: 250g, 500g
+- Price: ₹2895/kg
+- Export available: No
+
+Anaerobic-natural SLN 9 from Oak Winds, co-conditioned with strawberry and rested in whiskey oak. Sealed-tank fermentation drives vivid strawberry and floral notes; the barrel adds a soft oak frame. Roasted light to keep the fruit forward.
+
+Brewing/roasting notes: Pour-over or AeroPress at 88–90°C amplifies the strawberry. 1:15 ratio, medium grind. Outstanding as cold brew.
+
+### Cacao Rum × HSD
+
+- Farm: Brown Valley Coffee Estate × Gray Cup Roastery (Boipariguda, Koraput)
+- Variety: Arabica HSD (Hibrido de Timor)
+- Processing: honey
+- Roast level: medium-dark
+- Flavor notes: Dark Chocolate, Cacao Nib, Rum, Toasted Hazelnut, Syrupy
+- Availability: out-of-stock
+- Weight options: 250g, 500g
+- Price: ₹2745/kg
+- Export available: No
+
+HSD honey lot co-fermented with cacao husk and finished in rum barrels. Deep dark-chocolate and cacao-nib notes over the HSD's rounded sweetness, with a rum-soaked edge. A dessert in a cup.
+
+Brewing/roasting notes: Espresso or moka pot for maximum chocolate intensity. As filter, brew slightly stronger (1:14) at 94°C.
+
 ### Strawberry Cacao × Anaerobic Natural
 
 - Farm: Oak Winds Farm × Gray Cup Roastery (Pottangi, Koraput)
@@ -879,7 +879,7 @@ Brewing/roasting notes: Pour-over at 92°C keeps the orange zesty; espresso at 9
 - Processing: natural
 - Roast level: light
 - Flavor notes: Strawberry, Cacao Nib, Hibiscus, Red Berry, Tropical Sweetness
-- Availability: limited
+- Availability: out-of-stock
 - Weight options: 250g, 500g
 - Price: ₹2895/kg
 - Export available: No

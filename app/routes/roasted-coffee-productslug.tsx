@@ -8,6 +8,12 @@ import { roastedProductSchema, jsonLdScript } from "@/lib/product-schema";
 import { computeItemPrice } from "@/lib/pricing";
 import { generateTitle, generateDescription, SITE_URL } from "@/lib/seo";
 
+const POUR_OVER_IDS = new Set([
+  "strawberry-roasted",
+  "strawberry-whiskey-anaerobic-natural",
+  "strawberry-cacao-anaerobic-natural",
+]);
+
 export function loader({ params }: Route.LoaderArgs) {
   const product = getProductById(params.productSlug);
   if (!product || product.isGreen || product.roastLevel === "green") {
@@ -73,12 +79,22 @@ export default function RoastedCoffeeProductPage({ loaderData }: Route.Component
             <span className="text-[10px] font-bold uppercase tracking-widest border-2 border-white text-white px-2 py-0.5">
               {roastLabels[product.roastLevel]}
             </span>
+            {POUR_OVER_IDS.has(product.id) && (
+              <span className="text-[10px] font-bold uppercase tracking-widest border-2 border-white text-white px-2 py-0.5">
+                Pour Over
+              </span>
+            )}
             <span className="text-[10px] font-bold uppercase tracking-widest bg-white text-odisha-black px-2 py-0.5">
               {product.processing}
             </span>
             {product.availability === "limited" && (
               <span className="text-[10px] font-bold uppercase tracking-widest bg-odisha-yellow text-black px-2 py-0.5">
                 Limited
+              </span>
+            )}
+            {product.availability === "out-of-stock" && (
+              <span className="text-[10px] font-bold uppercase tracking-widest bg-odisha-black/50 text-white px-2 py-0.5">
+                Out of Stock
               </span>
             )}
           </div>

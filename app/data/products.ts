@@ -14,7 +14,7 @@ export type Product = {
   flavorNotes: string[];
   description: string;
   brewingNotes: string;
-  availability: "in-stock" | "limited" | "seasonal";
+  availability: "in-stock" | "limited" | "seasonal" | "out-of-stock";
   weightOptions: string[];
   exportAvailable: boolean;
   minOrderExport?: string;
@@ -120,26 +120,6 @@ export const products: Product[] = [
     weightOptions: ["250g", "500g", "1kg"],
     exportAvailable: false,
     pricePerKg: 1568,
-    image: "koraput-coffee.webp",
-  },
-  {
-    id: "strawberry-roasted",
-    name: "Strawberry Roasted",
-    farmId: "oak-winds-farm",
-    farmName: "Oak Winds Farm × Gray Cup Roastery",
-    region: "Pottangi, Koraput",
-    processing: "natural",
-    variety: "Arabica SLN 9",
-    roastLevel: "light",
-    flavorNotes: ["Fresh Strawberry", "Rose Hip", "Hibiscus", "Tropical Sweetness"],
-    description:
-      "A rare anaerobic natural lot from Oak Winds Farm, processed with extended cherry fermentation that produces vivid strawberry and floral notes. Roasted light to let the process-driven character sing. Each batch is limited, when it's gone, it's gone until next season.",
-    brewingNotes:
-      "Best as pour-over or AeroPress at 88–90°C (lower temp amplifies the strawberry). 1:15 ratio, medium grind. Try as a cold brew for a stunning no-heat-needed strawberry sweetness.",
-    availability: "limited",
-    weightOptions: ["250g", "500g", "1kg"],
-    exportAvailable: false,
-    pricePerKg: 2058,
     image: "koraput-coffee.webp",
   },
   {
@@ -485,26 +465,6 @@ export const products: Product[] = [
     image: "koraput-coffee.webp",
   },
   {
-    id: "strawberry-whiskey-anaerobic-natural",
-    name: "Strawberry Whiskey × Anaerobic Natural",
-    farmId: "oak-winds-farm",
-    farmName: "Oak Winds Farm × Gray Cup Roastery",
-    region: "Pottangi, Koraput",
-    processing: "natural",
-    variety: "Arabica SLN 9",
-    roastLevel: "light",
-    flavorNotes: ["Fresh Strawberry", "Whiskey Oak", "Rose", "Candied Fruit", "Syrupy"],
-    description:
-      "Anaerobic-natural SLN 9 from Oak Winds, co-conditioned with strawberry and rested in whiskey oak. Sealed-tank fermentation drives vivid strawberry and floral notes; the barrel adds a soft oak frame. Roasted light to keep the fruit forward.",
-    brewingNotes:
-      "Pour-over or AeroPress at 88–90°C amplifies the strawberry. 1:15 ratio, medium grind. Outstanding as cold brew.",
-    availability: "limited",
-    weightOptions: ["250g", "500g"],
-    exportAvailable: false,
-    pricePerKg: 2895,
-    image: "koraput-coffee.webp",
-  },
-  {
     id: "rum-natural",
     name: "Rum × Natural",
     farmId: "koraput-organic",
@@ -522,26 +482,6 @@ export const products: Product[] = [
     weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 2545,
-    image: "koraput-coffee.webp",
-  },
-  {
-    id: "cacao-rum-hsd",
-    name: "Cacao Rum × HSD",
-    farmId: "brown-valley-coffee-estate",
-    farmName: "Brown Valley Coffee Estate × Gray Cup Roastery",
-    region: "Boipariguda, Koraput",
-    processing: "honey",
-    variety: "Arabica HSD (Hibrido de Timor)",
-    roastLevel: "medium-dark",
-    flavorNotes: ["Dark Chocolate", "Cacao Nib", "Rum", "Toasted Hazelnut", "Syrupy"],
-    description:
-      "HSD honey lot co-fermented with cacao husk and finished in rum barrels. Deep dark-chocolate and cacao-nib notes over the HSD's rounded sweetness, with a rum-soaked edge. A dessert in a cup.",
-    brewingNotes:
-      "Espresso or moka pot for maximum chocolate intensity. As filter, brew slightly stronger (1:14) at 94°C.",
-    availability: "limited",
-    weightOptions: ["250g", "500g"],
-    exportAvailable: false,
-    pricePerKg: 2745,
     image: "koraput-coffee.webp",
   },
   {
@@ -605,6 +545,66 @@ export const products: Product[] = [
     image: "koraput-coffee.webp",
   },
   {
+    id: "strawberry-roasted",
+    name: "Strawberry Roasted",
+    farmId: "oak-winds-farm",
+    farmName: "Oak Winds Farm × Gray Cup Roastery",
+    region: "Pottangi, Koraput",
+    processing: "natural",
+    variety: "Arabica SLN 9",
+    roastLevel: "light",
+    flavorNotes: ["Fresh Strawberry", "Rose Hip", "Hibiscus", "Tropical Sweetness"],
+    description:
+      "A rare anaerobic natural lot from Oak Winds Farm, processed with extended cherry fermentation that produces vivid strawberry and floral notes. Roasted light to let the process-driven character sing. Each batch is limited, when it's gone, it's gone until next season.",
+    brewingNotes:
+      "Best as pour-over or AeroPress at 88–90°C (lower temp amplifies the strawberry). 1:15 ratio, medium grind. Try as a cold brew for a stunning no-heat-needed strawberry sweetness.",
+    availability: "out-of-stock",
+    weightOptions: ["250g", "500g", "1kg"],
+    exportAvailable: false,
+    pricePerKg: 2058,
+    image: "koraput-coffee.webp",
+  },
+  {
+    id: "strawberry-whiskey-anaerobic-natural",
+    name: "Strawberry Whiskey × Anaerobic Natural",
+    farmId: "oak-winds-farm",
+    farmName: "Oak Winds Farm × Gray Cup Roastery",
+    region: "Pottangi, Koraput",
+    processing: "natural",
+    variety: "Arabica SLN 9",
+    roastLevel: "light",
+    flavorNotes: ["Fresh Strawberry", "Whiskey Oak", "Rose", "Candied Fruit", "Syrupy"],
+    description:
+      "Anaerobic-natural SLN 9 from Oak Winds, co-conditioned with strawberry and rested in whiskey oak. Sealed-tank fermentation drives vivid strawberry and floral notes; the barrel adds a soft oak frame. Roasted light to keep the fruit forward.",
+    brewingNotes:
+      "Pour-over or AeroPress at 88–90°C amplifies the strawberry. 1:15 ratio, medium grind. Outstanding as cold brew.",
+    availability: "out-of-stock",
+    weightOptions: ["250g", "500g"],
+    exportAvailable: false,
+    pricePerKg: 2895,
+    image: "koraput-coffee.webp",
+  },
+  {
+    id: "cacao-rum-hsd",
+    name: "Cacao Rum × HSD",
+    farmId: "brown-valley-coffee-estate",
+    farmName: "Brown Valley Coffee Estate × Gray Cup Roastery",
+    region: "Boipariguda, Koraput",
+    processing: "honey",
+    variety: "Arabica HSD (Hibrido de Timor)",
+    roastLevel: "medium-dark",
+    flavorNotes: ["Dark Chocolate", "Cacao Nib", "Rum", "Toasted Hazelnut", "Syrupy"],
+    description:
+      "HSD honey lot co-fermented with cacao husk and finished in rum barrels. Deep dark-chocolate and cacao-nib notes over the HSD's rounded sweetness, with a rum-soaked edge. A dessert in a cup.",
+    brewingNotes:
+      "Espresso or moka pot for maximum chocolate intensity. As filter, brew slightly stronger (1:14) at 94°C.",
+    availability: "out-of-stock",
+    weightOptions: ["250g", "500g"],
+    exportAvailable: false,
+    pricePerKg: 2745,
+    image: "koraput-coffee.webp",
+  },
+  {
     id: "strawberry-cacao-anaerobic-natural",
     name: "Strawberry Cacao × Anaerobic Natural",
     farmId: "oak-winds-farm",
@@ -618,7 +618,7 @@ export const products: Product[] = [
       "Anaerobic-natural SLN 9 from Oak Winds co-fermented with strawberry and cacao husk. Sealed-tank fermentation locks in intense red-berry and strawberry, with cacao nib grounding the sweetness. No barrel — pure co-ferment. Roasted light.",
     brewingNotes:
       "Pour-over or AeroPress at 88–90°C, 1:15 ratio, medium grind. Cold brew for a naturally sweet, fruit-forward cup with no additives.",
-    availability: "limited",
+    availability: "out-of-stock",
     weightOptions: ["250g", "500g"],
     exportAvailable: false,
     pricePerKg: 2895,
@@ -642,10 +642,12 @@ export const availabilityLabels: Record<Product["availability"], string> = {
   "in-stock": "In Stock",
   limited: "Limited",
   seasonal: "Seasonal",
+  "out-of-stock": "Out of Stock",
 };
 
 export const availabilityColors: Record<Product["availability"], string> = {
   "in-stock": "bg-[#3A7D44] text-white",
   limited: "bg-[#E3A008] text-black",
   seasonal: "bg-[#1E3A8A] text-white",
+  "out-of-stock": "bg-odisha-black/50 text-white",
 };

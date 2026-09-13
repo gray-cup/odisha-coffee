@@ -40,6 +40,15 @@ export function RoastedOrderPanel({ product }: { product: Product }) {
     window.setTimeout(() => setAdded(false), 1800);
   };
 
+  if (product.availability === "out-of-stock") {
+    return (
+      <div className="border-2 border-odisha-black bg-white p-5 text-center">
+        <p className="text-sm font-bold uppercase tracking-widest text-odisha-black/40">Out of Stock</p>
+        <p className="text-xs text-odisha-black/50 mt-1">This lot is sold out. Check back for the next batch.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="border-2 border-odisha-black bg-white p-5">
       <div className="mb-4">

@@ -12,6 +12,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 const MAX_QUANTITY = 20;
 
+const POUR_OVER_IDS = new Set([
+  "strawberry-roasted",
+  "strawberry-whiskey-anaerobic-natural",
+  "strawberry-cacao-anaerobic-natural",
+]);
+
 // Mirrors the "Select" quick-checkout flow on /buy-green-beans (see
 // products-catalog.tsx) so both catalogues behave the same way: "Select"
 // builds an ephemeral multi-product checkout line (never touching the
@@ -154,6 +160,11 @@ function RoastedProductCard({
           <span className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 bg-odisha-offwhite border border-odisha-black/30 text-odisha-black">
             {roastLabels[product.roastLevel]}
           </span>
+          {POUR_OVER_IDS.has(product.id) && (
+            <span className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 bg-odisha-offwhite border border-odisha-black/30 text-odisha-black">
+              Pour Over
+            </span>
+          )}
         </div>
 
         <div className="flex flex-wrap gap-1 mb-3 flex-1">
@@ -165,79 +176,87 @@ function RoastedProductCard({
         </div>
 
         <div className="border-t-2 border-odisha-black pt-3 mt-auto space-y-2">
-          <EstatePicker product={product} farmId={farmId} setFarmId={setFarmId} />
-          {/* Weight chips */}
-          <div className="grid grid-cols-4 gap-1.5">
-            {ROASTED_TIERS.map((opt) => {
-              const active = selectedWeight.label === opt.label;
-              return (
+          {product.availability === "out-of-stock" ? (
+            <div className="text-center text-[11px] font-bold uppercase tracking-widest text-odisha-black/40 py-2">
+              Out of Stock
+            </div>
+          ) : (
+            <>
+              <EstatePicker product={product} farmId={farmId} setFarmId={setFarmId} />
+              {/* Weight chips */}
+              <div className="grid grid-cols-4 gap-1.5">
+                {ROASTED_TIERS.map((opt) => {
+                  const active = selectedWeight.label === opt.label;
+                  return (
+                    <button
+                      key={opt.label}
+                      type="button"
+                      onClick={() => setSelectedWeight(opt)}
+                      className={`flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 border-2 transition-colors cursor-pointer ${
+                        active
+                          ? "bg-odisha-red border-odisha-red text-white"
+                          : "bg-white border-odisha-black/20 text-odisha-black hover:border-odisha-black"
+                      }`}
+                    >
+                      <span className="text-[11px] font-bold leading-none">{opt.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="flex items-end justify-between">
+                <span className="font-serif text-lg font-bold text-odisha-black">
+                  ₹{unitPrice.toLocaleString("en-IN")}
+                </span>
+                <span className="text-[10px] text-odisha-black/40">for {selectedWeight.label}</span>
+              </div>
+
+              <div className="flex gap-2">
                 <button
-                  key={opt.label}
                   type="button"
-                  onClick={() => setSelectedWeight(opt)}
-                  className={`flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 border-2 transition-colors cursor-pointer ${
-                    active
-                      ? "bg-odisha-red border-odisha-red text-white"
-                      : "bg-white border-odisha-black/20 text-odisha-black hover:border-odisha-black"
-                  }`}
+                  onClick={handleSelect}
+                  className="flex-1 flex items-center justify-center gap-1.5 px-2 py-2 text-[11px] font-bold uppercase tracking-widest border-2 border-odisha-black text-odisha-black bg-white hover:bg-odisha-black hover:text-white transition-colors cursor-pointer"
                 >
-                  <span className="text-[11px] font-bold leading-none">{opt.label}</span>
+                  Select
                 </button>
-              );
-            })}
-          </div>
 
-          <div className="flex items-end justify-between">
-            <span className="font-serif text-lg font-bold text-odisha-black">
-              ₹{unitPrice.toLocaleString("en-IN")}
-            </span>
-            <span className="text-[10px] text-odisha-black/40">for {selectedWeight.label}</span>
-          </div>
-
-          <div className="flex gap-2">
-            <button
-              type="button"
-              onClick={handleSelect}
-              className="flex-1 flex items-center justify-center gap-1.5 px-2 py-2 text-[11px] font-bold uppercase tracking-widest border-2 border-odisha-black text-odisha-black bg-white hover:bg-odisha-black hover:text-white transition-colors cursor-pointer"
-            >
-              Select
-            </button>
-
-            <motion.button
-              type="button"
-              onClick={handleAddToCart}
-              whileTap={{ scale: 0.94 }}
-              className="flex-1 relative flex items-center justify-center gap-1.5 px-2 py-2 text-[11px] font-bold uppercase tracking-widest border-2 border-odisha-black bg-odisha-black text-white hover:bg-odisha-red hover:border-odisha-red transition-colors cursor-pointer overflow-hidden"
-            >
-              <AnimatePresence mode="wait" initial={false}>
-                {justAdded ? (
-                  <motion.span
-                    key="added"
-                    initial={{ y: 12, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -12, opacity: 0 }}
-                    transition={{ duration: 0.18 }}
-                    className="flex items-center gap-1.5"
-                  >
-                    <Check className="w-3.5 h-3.5" />
-                    Added!
-                  </motion.span>
-                ) : (
-                  <motion.span
-                    key="add"
-                    initial={{ y: 12, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -12, opacity: 0 }}
-                    transition={{ duration: 0.18 }}
-                    className="flex items-center gap-1.5"
-                  >
-                    <ShoppingCart className="w-3.5 h-3.5" />
-                    Add to Cart
-                  </motion.span>
-                )}
-              </AnimatePresence>
-            </motion.button>
-          </div>
+                <motion.button
+                  type="button"
+                  onClick={handleAddToCart}
+                  whileTap={{ scale: 0.94 }}
+                  className="flex-1 relative flex items-center justify-center gap-1.5 px-2 py-2 text-[11px] font-bold uppercase tracking-widest border-2 border-odisha-black bg-odisha-black text-white hover:bg-odisha-red hover:border-odisha-red transition-colors cursor-pointer overflow-hidden"
+                >
+                  <AnimatePresence mode="wait" initial={false}>
+                    {justAdded ? (
+                      <motion.span
+                        key="added"
+                        initial={{ y: 12, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -12, opacity: 0 }}
+                        transition={{ duration: 0.18 }}
+                        className="flex items-center gap-1.5"
+                      >
+                        <Check className="w-3.5 h-3.5" />
+                        Added!
+                      </motion.span>
+                    ) : (
+                      <motion.span
+                        key="add"
+                        initial={{ y: 12, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -12, opacity: 0 }}
+                        transition={{ duration: 0.18 }}
+                        className="flex items-center gap-1.5"
+                      >
+                        <ShoppingCart className="w-3.5 h-3.5" />
+                        Add to Cart
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                </motion.button>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
@@ -316,77 +335,85 @@ function SpecialtyProductCard({
       </div>
 
       <div className="space-y-2">
-        <div className="grid grid-cols-4 gap-1.5">
-          {ROASTED_TIERS.map((opt) => {
-            const active = selectedWeight.label === opt.label;
-            return (
+        {product.availability === "out-of-stock" ? (
+          <div className="text-center text-[11px] font-bold uppercase tracking-widest text-odisha-black/40 py-2">
+            Out of Stock
+          </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-4 gap-1.5">
+              {ROASTED_TIERS.map((opt) => {
+                const active = selectedWeight.label === opt.label;
+                return (
+                  <button
+                    key={opt.label}
+                    type="button"
+                    onClick={() => setSelectedWeight(opt)}
+                    className={`flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 border-2 transition-colors cursor-pointer ${
+                      active
+                        ? "bg-odisha-red border-odisha-red text-white"
+                        : "bg-white border-odisha-black/20 text-odisha-black hover:border-odisha-black"
+                    }`}
+                  >
+                    <span className="text-[11px] font-bold leading-none">{opt.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="flex items-end justify-between">
+              <span className="font-serif text-lg font-bold text-odisha-black">
+                ₹{unitPrice.toLocaleString("en-IN")}
+              </span>
+              <span className="text-[10px] text-odisha-black/40">for {selectedWeight.label}</span>
+            </div>
+
+            <div className="flex gap-2">
               <button
-                key={opt.label}
                 type="button"
-                onClick={() => setSelectedWeight(opt)}
-                className={`flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 border-2 transition-colors cursor-pointer ${
-                  active
-                    ? "bg-odisha-red border-odisha-red text-white"
-                    : "bg-white border-odisha-black/20 text-odisha-black hover:border-odisha-black"
-                }`}
+                onClick={handleSelect}
+                className="flex-1 flex items-center justify-center gap-1.5 px-2 py-2 text-[11px] font-bold uppercase tracking-widest border-2 border-odisha-black text-odisha-black bg-white hover:bg-odisha-black hover:text-white transition-colors cursor-pointer"
               >
-                <span className="text-[11px] font-bold leading-none">{opt.label}</span>
+                Select
               </button>
-            );
-          })}
-        </div>
 
-        <div className="flex items-end justify-between">
-          <span className="font-serif text-lg font-bold text-odisha-black">
-            ₹{unitPrice.toLocaleString("en-IN")}
-          </span>
-          <span className="text-[10px] text-odisha-black/40">for {selectedWeight.label}</span>
-        </div>
-
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={handleSelect}
-            className="flex-1 flex items-center justify-center gap-1.5 px-2 py-2 text-[11px] font-bold uppercase tracking-widest border-2 border-odisha-black text-odisha-black bg-white hover:bg-odisha-black hover:text-white transition-colors cursor-pointer"
-          >
-            Select
-          </button>
-
-          <motion.button
-            type="button"
-            onClick={handleAddToCart}
-            whileTap={{ scale: 0.94 }}
-            className="flex-1 relative flex items-center justify-center gap-1.5 px-2 py-2 text-[11px] font-bold uppercase tracking-widest border-2 border-odisha-black bg-odisha-black text-white hover:bg-odisha-red hover:border-odisha-red transition-colors cursor-pointer overflow-hidden"
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              {justAdded ? (
-                <motion.span
-                  key="added"
-                  initial={{ y: 12, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -12, opacity: 0 }}
-                  transition={{ duration: 0.18 }}
-                  className="flex items-center gap-1.5"
-                >
-                  <Check className="w-3.5 h-3.5" />
-                  Added!
-                </motion.span>
-              ) : (
-                <motion.span
-                  key="add"
-                  initial={{ y: 12, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -12, opacity: 0 }}
-                  transition={{ duration: 0.18 }}
-                  className="flex items-center gap-1.5"
-                >
-                  <ShoppingCart className="w-3.5 h-3.5" />
-                  Add to Cart
-                </motion.span>
-              )}
-            </AnimatePresence>
-          </motion.button>
-        </div>
+              <motion.button
+                type="button"
+                onClick={handleAddToCart}
+                whileTap={{ scale: 0.94 }}
+                className="flex-1 relative flex items-center justify-center gap-1.5 px-2 py-2 text-[11px] font-bold uppercase tracking-widest border-2 border-odisha-black bg-odisha-black text-white hover:bg-odisha-red hover:border-odisha-red transition-colors cursor-pointer overflow-hidden"
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  {justAdded ? (
+                    <motion.span
+                      key="added"
+                      initial={{ y: 12, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -12, opacity: 0 }}
+                      transition={{ duration: 0.18 }}
+                      className="flex items-center gap-1.5"
+                    >
+                      <Check className="w-3.5 h-3.5" />
+                      Added!
+                    </motion.span>
+                  ) : (
+                    <motion.span
+                      key="add"
+                      initial={{ y: 12, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -12, opacity: 0 }}
+                      transition={{ duration: 0.18 }}
+                      className="flex items-center gap-1.5"
+                    >
+                      <ShoppingCart className="w-3.5 h-3.5" />
+                      Add to Cart
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </motion.button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
