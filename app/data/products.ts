@@ -150,7 +150,7 @@ export const products: Product[] = [
     region: "Pottangi, Koraput",
     processing: "natural",
     variety: "Chandragiri",
-    roastLevel: "medium-dark",
+    roastLevel: "medium",
     flavorNotes: ["Toasted Oak", "Molasses", "Vanilla", "Dark Fruit", "Spirit Warmth"],
     description:
       "Honey-processed Catuai aged in reclaimed whiskey and rum barrels from Odisha distilleries. The 30-day barrel rest imparts layers of vanilla, oak, and spirit warmth onto the coffee's natural sweetness. A conversation piece roast, complex, bold, and absolutely unmistakable.",

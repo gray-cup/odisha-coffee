@@ -525,7 +525,7 @@ Brewing/roasting notes: Best as pour-over or AeroPress at 88–90°C (lower temp
 - Farm: Dream Hill Coffee × Gray Cup Roastery (Pottangi, Koraput)
 - Variety: Chandragiri
 - Processing: natural
-- Roast level: medium-dark
+- Roast level: medium
 - Flavor notes: Toasted Oak, Molasses, Vanilla, Dark Fruit, Spirit Warmth
 - Availability: limited
 - Weight options: 250g, 500g
