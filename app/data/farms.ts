@@ -221,26 +221,6 @@ export const farms: Farm[] = [
     featured: false,
   },
   {
-    id: "koraput-a1-coffee",
-    name: "Koraput A-1 Coffee",
-    region: "Koraput",
-    district: "Koraput",
-    elevation: "1000–1250m",
-    area: "35 acres",
-    varieties: ["Arabica S795", "Arabica SLN 9"],
-    processing: ["washed", "natural", "honey"],
-    flavorNotes: ["Caramel", "Orange Peel", "Dark Fruit"],
-    harvestSeason: "November – March",
-    established: 1992,
-    description:
-      "Koraput A-1 Coffee is one of the oldest and most established estates in Odisha, with a history stretching back over three decades. The estate's scale and infrastructure enable comprehensive lot separation across varieties and processing methods, making it a key supplier for export buyers seeking consistency and volume.",
-    story:
-      "Established before Odisha coffee had any formal identity, Koraput A-1 helped build the foundation of the region's reputation. The current management (third generation in the same family) has modernised the processing facility while maintaining the estate's commitment to shade-grown, chemical-free cultivation.",
-    certifications: ["FSSAI", "APEDA", "Organic India", "ISO 22000"],
-    exportReady: true,
-    featured: true,
-  },
-  {
     id: "koraput-organic",
     name: "Koraput Organic",
     region: "Semiliguda",

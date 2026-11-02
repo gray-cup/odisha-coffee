@@ -186,24 +186,6 @@ Kakinada Plantation produces balanced, approachable coffees from the central Kor
 
 The Kakinada family have been a sourcing partner of Gray Cup since the early days, contributing to export pooling arrangements. Their consistent quality output has made them a reliable supplier in the domestic specialty market.
 
-### Koraput A-1 Coffee
-
-- URL: https://odishacoffee.com/farms/koraput-a1-coffee
-- Region: Koraput, Koraput district
-- Elevation: 1000–1250m
-- Area: 35 acres
-- Varieties: Arabica S795, Arabica SLN 9
-- Processing methods: washed, natural, honey
-- Flavor notes: Caramel, Orange Peel, Dark Fruit
-- Harvest season: November – March
-- Established: 1992
-- Certifications: FSSAI, APEDA, Organic India, ISO 22000
-- Export ready: Yes
-
-Koraput A-1 Coffee is one of the oldest and most established estates in Odisha, with a history stretching back over three decades. The estate's scale and infrastructure enable comprehensive lot separation across varieties and processing methods, making it a key supplier for export buyers seeking consistency and volume.
-
-Established before Odisha coffee had any formal identity, Koraput A-1 helped build the foundation of the region's reputation. The current management (third generation in the same family) has modernised the processing facility while maintaining the estate's commitment to shade-grown, chemical-free cultivation.
-
 ### Koraput Organic
 
 - URL: https://odishacoffee.com/farms/koraput-organic
@@ -810,7 +792,7 @@ Brewing/roasting notes: French press or moka pot at 94°C for the fullest body. 
 
 ### Orange Rum × Natural
 
-- Farm: Koraput A-1 Coffee × Gray Cup Roastery (Koraput District)
+- Farm: Gray Cup Roastery (Koraput District)
 - Variety: Arabica S795
 - Processing: natural
 - Roast level: medium

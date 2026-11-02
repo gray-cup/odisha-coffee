@@ -54,7 +54,7 @@ const certifications = [
   },
   {
     name: "ISO 22000",
-    desc: "Food safety management certification held by Brown Valley Coffee Estate, Koraput A-1 Coffee, and Panigrahi Agro Foundation.",
+    desc: "Food safety management certification held by Brown Valley Coffee Estate and Panigrahi Agro Foundation.",
   },
 ];
 

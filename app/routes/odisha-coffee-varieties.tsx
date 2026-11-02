@@ -53,7 +53,7 @@ const varieties = [
     characteristics:
       "S795 is the most widely planted Arabica variety in Odisha. Developed by the Coffee Board of India, it carries disease resistance from its Hybrido de Timor parent while expressing the clean, chocolate-forward cup character typical of the S-series. In Koraput, S795 produces dense, well-structured beans at mid-elevation with reliable yields.",
     processing: ["Washed", "Natural", "Honey"],
-    farmExamples: ["Koraput A-1 Coffee", "Agrawal Plantation", "Koraput Organic", "Panigrahi Agro Foundation"],
+    farmExamples: ["Agrawal Plantation", "Koraput Organic", "Panigrahi Agro Foundation"],
     exportAvailable: true,
   },
   {
@@ -67,7 +67,7 @@ const varieties = [
     characteristics:
       "SLN 9 is the high-altitude specialty variety of Odisha's coffee belt, planted primarily in the Pottangi highlands where it reaches its full aromatic potential. Slow development at elevation above 1100m concentrates sugars and intensifies floral notes, producing some of the most complex cups from Indian-origin coffee available to specialty buyers.",
     processing: ["Washed", "Honey"],
-    farmExamples: ["Oak Winds Farm", "Dream Hill Coffee, Saptagiri Plantation", "Koraput A-1 Coffee"],
+    farmExamples: ["Oak Winds Farm", "Dream Hill Coffee, Saptagiri Plantation"],
     exportAvailable: true,
   },
   {

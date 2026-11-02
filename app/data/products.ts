@@ -41,7 +41,7 @@ export const products: Product[] = [
   {
     id: "koraput-hsd-washed",
     name: "Koraput HSD Washed",
-    farmId: "koraput-a1-coffee",
+    farmId: "brown-valley-coffee-estate",
     farmName: "Multiple Gray Cup Partner Farms",
     region: "Koraput District",
     processing: "washed",
@@ -63,7 +63,7 @@ export const products: Product[] = [
   {
     id: "koraput-naturals",
     name: "Koraput Naturals",
-    farmId: "koraput-a1-coffee",
+    farmId: "brown-valley-coffee-estate",
     farmName: "Multiple Gray Cup Partner Farms",
     region: "Koraput District",
     processing: "natural",
@@ -85,7 +85,7 @@ export const products: Product[] = [
   {
     id: "hsd-roasted",
     name: "HSD Roasted",
-    farmId: "koraput-a1-coffee",
+    farmId: "brown-valley-coffee-estate",
     farmName: "Gray Cup Roastery",
     region: "Koraput District",
     processing: "washed",
@@ -105,7 +105,7 @@ export const products: Product[] = [
   {
     id: "naturals-roasted",
     name: "Naturals Roasted",
-    farmId: "koraput-a1-coffee",
+    farmId: "brown-valley-coffee-estate",
     farmName: "Gray Cup Roastery",
     region: "Koraput District",
     processing: "natural",
@@ -145,7 +145,7 @@ export const products: Product[] = [
   {
     id: "espresso-8020",
     name: "Espresso Blend",
-    farmId: "koraput-a1-coffee",
+    farmId: "brown-valley-coffee-estate",
     farmName: "Gray Cup Roastery",
     region: "Koraput District",
     processing: "washed",
@@ -334,7 +334,7 @@ export const products: Product[] = [
   {
     id: "odisha-export-grade-green-arabica",
     name: "Odisha Export Grade - Green Arabica",
-    farmId: "koraput-a1-coffee",
+    farmId: "brown-valley-coffee-estate",
     farmName: "Multiple Gray Cup Partner Farms",
     region: "Koraput District",
     processing: "washed",
@@ -527,8 +527,8 @@ export const products: Product[] = [
   {
     id: "orange-rum-natural",
     name: "Orange Rum × Natural",
-    farmId: "koraput-a1-coffee",
-    farmName: "Koraput A-1 Coffee × Gray Cup Roastery",
+    farmId: "brown-valley-coffee-estate",
+    farmName: "Gray Cup Roastery",
     region: "Koraput District",
     processing: "natural",
     variety: "Arabica S795",

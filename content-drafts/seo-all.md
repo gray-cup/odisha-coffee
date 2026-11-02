@@ -1163,10 +1163,6 @@ Generated 2026-08-31T10:09:20.830Z.
 - **Title (52):** Kakinada Plantation - Koraput, Koraput Coffee Estate
 - **Description (146):** Kakinada Plantation: Arabica S795 Arabica grown at 920–1080m in Koraput, Koraput, washed/natural processed. Kakinada Plantation produces balanced.
 
-### `/farms/koraput-a1-coffee`
-- **Title (51):** Koraput A-1 Coffee - Koraput, Koraput Coffee Estate
-- **Description (160):** Koraput A-1 Coffee: Arabica S795 &amp; Arabica SLN 9 Arabica grown at 1000–1250m in Koraput, Koraput, washed/natural/honey processed. Koraput A-1 Coffee is one.
-
 ### `/farms/koraput-organic`
 - **Title (51):** Koraput Organic - Semiliguda, Koraput Coffee Estate
 - **Description (156):** Koraput Organic: Arabica S795 &amp; Chandragiri Arabica grown at 900–1100m in Semiliguda, Koraput, washed/natural processed. Koraput Organic is a certified.
@@ -1343,18 +1339,6 @@ Generated 2026-08-31T10:09:20.830Z.
 ### `/farms/kakinada-plantation/roasted-coffee`
 - **Title (52):** Kakinada Plantation Roasted Coffee - Koraput, Odisha
 - **Description (158):** Small-batch roasted Arabica traceable to Kakinada Plantation, Koraput, Koraput, grown at 920–1080m, Arabica S795. Roasted to order by Gray Cup, delivered Indi
-
-### `/farms/koraput-a1-coffee/green-coffee`
-- **Title (55):** Koraput A-1 Coffee Green Coffee Beans - Koraput, Odisha
-- **Description (162):** Buy green (unroasted) Arabica from Koraput A-1 Coffee, Koraput, Koraput, grown at 1000–1250m, Arabica S795 &amp; Arabica SLN 9, washed/natural/honey processed. Tr
-
-### `/farms/koraput-a1-coffee/products`
-- **Title (52):** Buy Coffee from Koraput A-1 Coffee - Koraput, Odisha
-- **Description (162):** Buy single-origin coffee lots from Koraput A-1 Coffee, Koraput, Koraput, Arabica S795 &amp; Arabica SLN 9, washed/natural/honey processed, grown at 1000–1250m. Gr
-
-### `/farms/koraput-a1-coffee/roasted-coffee`
-- **Title (51):** Koraput A-1 Coffee Roasted Coffee - Koraput, Odisha
-- **Description (162):** Small-batch roasted Arabica traceable to Koraput A-1 Coffee, Koraput, Koraput, grown at 1000–1250m, Arabica S795 &amp; Arabica SLN 9. Roasted to order by Gray Cup
 
 ### `/farms/koraput-organic/green-coffee`
 - **Title (52):** Koraput Organic Green Coffee Beans - Koraput, Odisha
