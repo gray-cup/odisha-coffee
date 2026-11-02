@@ -4,7 +4,7 @@
 
 Generated from app/data/*.ts and content/newsroom/*.mdx — do not hand-edit; run `node scripts/generate-llms-full.mjs` (also runs automatically on commit).
 
-## Farms & Estates (24)
+## Farms & Estates (23)
 
 ### Dream Hill Coffee - Saptagiri Plantation
 
